@@ -1,7 +1,7 @@
 local g = vim.g
 local opt = vim.opt
 g.dashboard_default_executive = 'telescope'
-g.colorscheme = 'nord'
+g.colorscheme = 'onedark'
 opt.number = true
 -- Show spaces
 opt.listchars:append({ space = '·', trail= '·'})
