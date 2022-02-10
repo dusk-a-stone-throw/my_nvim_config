@@ -5,6 +5,8 @@ return require('packer').startup(function()
     use 'windwp/nvim-autopairs'
     use 'luochen1990/rainbow'
     use 'tomtom/tcomment_vim'
+    -- Move lines
+    use 'fedepujol/move.nvim'
     -- Show css colors
     use 'norcalli/nvim-colorizer.lua'
     -- Better cpp highlight
