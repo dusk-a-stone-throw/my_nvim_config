@@ -1,10 +1,22 @@
--- Little plugins settings
-require('plugins_settings')
+-- Floating term
+require('plugins.fterm')
+-- Nvim-autopairs
+require('nvim-autopairs').setup()
+-- Nvim-colorizer.lua
+require('colorizer').setup()
 -- Bufferline nvim
-require('advanced_plugins/bufferline_settings')
+require('plugins.bufferline')
 -- Lualine.nvim
-require('advanced_plugins/lualine_settings')
+require('plugins.lualine')
+-- Start page
+require('plugins.dashboard')
+-- Awesome highlight
+require('plugins.treesitter')
+-- Colored brackets
+require('plugins.ts-rainbow')
 -- Nvim lsp completion
-require('LSP_config/nvim-lspconfig')
-require('LSP_config/nvim-cmp')
+require('LSP_config.nvim-lspconfig')
+require('LSP_config.nvim-cmp')
 require('LSP_config.lspsaga-nvim')
+-- Diagnostic config
+require('LSP_config.diagnostic')

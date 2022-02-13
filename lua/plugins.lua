@@ -3,24 +3,29 @@ return require('packer').startup(function()
     use 'wbthomason/packer.nvim'
     -- Start page
     use 'glepnir/dashboard-nvim'
+    -- Convert vim map to lua
+    use 'thugcee/nvim-map-to-lua'
+    -- Multiple cursors
+    use 'terryma/vim-multiple-cursors'
     -- Auto pairs
     use 'windwp/nvim-autopairs'
-    -- Rainbow brackets
-    use 'luochen1990/rainbow'
     -- Better comment
     use 'tomtom/tcomment_vim'
     -- Float terminal
     use 'jiajiawang/fterm.nvim'
     -- Move lines
     use 'fedepujol/move.nvim'
-    -- Highlight operators
-    use 'Valloric/vim-operator-highlight'
     -- Folding
     use 'pierreglaser/folding-nvim'
     -- Show css colors
     use 'norcalli/nvim-colorizer.lua'
-    -- Better cpp highlight
-    use 'octol/vim-cpp-enhanced-highlight'
+    -- Awesome highlighting
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        run = ':TSUpdate'
+    }
+    -- Rainbow brackets
+    use 'p00f/nvim-ts-rainbow'
     -- Nvim LSP
     use 'neovim/nvim-lspconfig'
     -- Renaming etc

@@ -19,7 +19,7 @@ require('onedark').setup {
     toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'},
 
 }
-require('onedark').load()
+-- require('onedark').load()
 -- VsCode dark theme
 g.vscode_style = "dark"
-g.vscode_transparent = 1
+vim.cmd [[ colorscheme vscode ]]

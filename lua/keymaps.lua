@@ -18,3 +18,10 @@ map('v', '<C-Down>', ':MoveBlock(1)<CR>', {silent = true})
 map('n', 'gr', ':Lspsaga rename<CR>', {silent = true})
 -- LSP saga preview definition
 map('n', 'gd', ':Lspsaga preview_definition<CR>', {silent = true})
+-- Dashboard.nvim
+map("n", "<Leader>ff", ":DashboardFindFile<CR>", { noremap = true, silent = true, })
+map("n", "<Leader>fh", ":DashboardFindHistory<CR>", { noremap = true, silent = true, })
+map("n", "<Leader>tc", ":DashboardChangeColorscheme<CR>", { noremap = true, silent = true, })
+map("n", "<Leader>cn", ":DashboardNewFile<CR>", { noremap = true, silent = true, })
+map("n", "<Leader>fa", ":DashboardFindWord<CR>", { noremap = true, silent = true, })
+map("n", "<Leader>fb", ":DashboardJumpMark<CR>", { noremap = true, silent = true, })
