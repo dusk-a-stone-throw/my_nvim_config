@@ -1,4 +1,4 @@
-require('core_settings')
+require('settings')
 require('plugins')
 require('commands')
 require('theme')
