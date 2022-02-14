@@ -1,7 +1,7 @@
 local lspsaga = require('lspsaga')
 lspsaga.init_lsp_saga {
     debug = false,
-    use_saga_diagnostic_sign = true,
+    use_saga_diagnostic_sign = false,
     -- Diagnostics
     error_sign = "",
     warn_sign = "",
@@ -9,9 +9,9 @@ lspsaga.init_lsp_saga {
     infor_sign = "",
     -- diagnostic_header_icon = "   ",
     -- Code actions
-    code_action_icon = " ",
+    code_action_icon = "",
     code_action_prompt = {
-      enable = true,
+      enable = false,
       sign = true,
       sign_priority = 40,
       virtual_text = true,
