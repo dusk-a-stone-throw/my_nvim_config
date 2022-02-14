@@ -19,7 +19,11 @@ require('onedark').setup {
     toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'},
 
 }
--- require('onedark').load()
+
+-- Tokyo night
+g.tokyonight_style = "night"
 -- VsCode dark theme
 g.vscode_style = "dark"
+-- Setup
+-- require('onedark').load()
 vim.cmd [[ colorscheme vscode ]]
