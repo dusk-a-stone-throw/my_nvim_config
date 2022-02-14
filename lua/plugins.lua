@@ -1,6 +1,8 @@
 return require('packer').startup(function()
     -- Optimiser
     use 'lewis6991/impatient.nvim'
+    -- Transparent background
+    use 'xiyaowong/nvim-transparent'
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- Start page
@@ -23,6 +25,8 @@ return require('packer').startup(function()
     use 'pierreglaser/folding-nvim'
     -- Show css colors
     use 'norcalli/nvim-colorizer.lua'
+    -- Highlight entered ranges
+    use 'winston0410/range-highlight.nvim'
     -- Awesome highlighting
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -63,4 +67,5 @@ return require('packer').startup(function()
     use 'navarasu/onedark.nvim'
     use 'Mofiqul/vscode.nvim'
     use 'folke/tokyonight.nvim'
+    use 'marko-cerovac/material.nvim'
 end)
