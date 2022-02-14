@@ -1,5 +1,8 @@
+-- Optimiser
+require('impatient')
 -- Floating term
 require('plugins.fterm')
+-- Code runner
 -- Nvim-autopairs
 require('nvim-autopairs').setup()
 -- Nvim-colorizer.lua
@@ -20,3 +23,5 @@ require('LSP_config.nvim-cmp')
 require('LSP_config.lspsaga-nvim')
 -- Diagnostic config
 require('LSP_config.diagnostic')
+-- Code formatter
+require('plugins.formatter')

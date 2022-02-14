@@ -6,7 +6,6 @@ local colors = {
     grey_2 = "#D3D3D3",
     black = "#1e222a",
     black_1 = "#252931",
-    black_2 = "#2c323c",
     green = "#95be76",
     none = "NONE",
 }
@@ -16,7 +15,7 @@ require('bufferline').setup {
       buffer_close_icon = "",
       modified_icon = "",
       close_icon = "",
-      show_close_icon = true,
+      show_close_icon = false,
       left_trunc_marker = "",
       right_trunc_marker = "",
       max_name_length = 14,
@@ -26,7 +25,7 @@ require('bufferline').setup {
       enforce_regular_tabs = false,
       view = "multiwindow",
       show_buffer_close_icons = true,
-      separator_style = "thin",
+      separator_style = { "", "" },
       always_show_bufferline = true,
       diagnostics = false,
     },
@@ -34,7 +33,7 @@ require('bufferline').setup {
     highlights = {
       background = {
         guifg = colors.grey_1,
-        guibg = colors.black_2,
+        guibg = colors.none,
       },
 
       -- Buffers
@@ -61,7 +60,7 @@ require('bufferline').setup {
       -- Close buttons
       close_button = {
         guifg = colors.grey_1,
-        guibg = colors.black_2,
+        guibg = colors.none,
       },
       close_button_visible = {
         guifg = colors.grey_2,
@@ -73,7 +72,7 @@ require('bufferline').setup {
       },
       fill = {
         guifg = colors.grey_1,
-        guibg = colors.black_2,
+        guibg = colors.none,
       },
       indicator_selected = {
         guifg = colors.black,
@@ -83,7 +82,7 @@ require('bufferline').setup {
       -- Modified
       modified = {
         guifg = colors.red,
-        guibg = colors.black_2,
+        guibg = colors.none,
       },
       modified_visible = {
         guifg = colors.grey,
@@ -96,16 +95,16 @@ require('bufferline').setup {
 
       -- Separators
       separator = {
-        guifg = colors.black_2,
-        guibg = colors.black_2,
+        guifg = colors.none,
+        guibg = colors.none,
       },
       separator_visible = {
         guifg = colors.black,
         guibg = colors.black,
       },
       separator_selected = {
-        guifg = colors.black_2,
-        guibg = colors.black_2,
+        guifg = colors.none,
+        guibg = colors.none,
       },
 
       -- Tabs
