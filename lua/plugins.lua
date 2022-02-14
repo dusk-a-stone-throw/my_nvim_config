@@ -1,4 +1,6 @@
 return require('packer').startup(function()
+    -- Optimiser
+    use 'lewis6991/impatient.nvim'
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- Start page
@@ -9,6 +11,8 @@ return require('packer').startup(function()
     use 'terryma/vim-multiple-cursors'
     -- Auto pairs
     use 'windwp/nvim-autopairs'
+    -- Get startup time
+    use 'dstein64/vim-startuptime'
     -- Better comment
     use 'tomtom/tcomment_vim'
     -- Float terminal
@@ -24,6 +28,7 @@ return require('packer').startup(function()
         'nvim-treesitter/nvim-treesitter',
         run = ':TSUpdate'
     }
+    -- Code runner
     -- Rainbow brackets
     use 'p00f/nvim-ts-rainbow'
     -- Nvim LSP
@@ -52,7 +57,10 @@ return require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
+    -- Formatting
+    use 'mhartington/formatter.nvim'
     -- Themes
     use 'navarasu/onedark.nvim'
     use 'Mofiqul/vscode.nvim'
+    use 'folke/tokyonight.nvim'
 end)
