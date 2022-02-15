@@ -2,8 +2,6 @@
 require('impatient')
 -- Floating term
 require('plugins.fterm')
--- Transparent bg
-require('plugins.transparent')
 -- Nvim-autopairs
 require('nvim-autopairs').setup()
 -- Nvim-colorizer.lua

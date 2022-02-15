@@ -1,8 +1,6 @@
 return require('packer').startup(function()
     -- Optimiser
     use 'lewis6991/impatient.nvim'
-    -- Transparent background
-    use 'xiyaowong/nvim-transparent'
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- Start page
@@ -68,4 +66,6 @@ return require('packer').startup(function()
     use 'Mofiqul/vscode.nvim'
     use 'folke/tokyonight.nvim'
     use 'marko-cerovac/material.nvim'
+    use 'ChristianChiarulli/nvcode-color-schemes.vim'
+    use 'rafamadriz/neon'
 end)

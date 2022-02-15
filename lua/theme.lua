@@ -22,8 +22,6 @@ require('onedark').setup {
 
 -- Tokyo night
 g.tokyonight_style = "night"
--- VsCode dark theme
-g.vscode_style = "dark"
 -- Setup
 -- require('onedark').load()
-vim.cmd [[ colorscheme vscode ]]
+vim.cmd [[ colorscheme nvcode ]]

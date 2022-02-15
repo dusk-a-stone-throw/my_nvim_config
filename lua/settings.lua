@@ -22,7 +22,7 @@ set.mouse = 'a'
 -- Show sign on the left side
 set.signcolumn = 'yes'
 -- Number of lines to keep above and below the cursor
-set.sidescrolloff = 8
+set.scrolloff = 14
 -- Don't wrap lines
 set.wrap = false
 -- For faster work
@@ -32,3 +32,5 @@ set.cursorcolumn = false
 set.foldmethod='expr'
 set.foldexpr = 'nvim_treesitter#foldexpr()'
 set.foldlevel = 999
+-- Better colors
+set.termguicolors = true
