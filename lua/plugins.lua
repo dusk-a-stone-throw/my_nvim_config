@@ -1,4 +1,6 @@
 return require('packer').startup(function()
+    -- Git integration
+    use  'lewis6991/gitsigns.nvim'
     -- Optimiser
     use 'lewis6991/impatient.nvim'
     -- Packer can manage itself

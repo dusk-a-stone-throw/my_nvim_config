@@ -24,3 +24,5 @@ require('LSP_config.nvim-cmp')
 require('LSP_config.diagnostic')
 -- Code formatter
 require('plugins.formatter')
+-- Git integration
+require('plugins.gitsigns')
