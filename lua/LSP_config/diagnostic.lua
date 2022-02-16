@@ -1,9 +1,10 @@
+-- Highlight line numbers
 -- Diagnostic signs
   local signs = {
     { name = "DiagnosticSignError", text = ">>" },
     { name = "DiagnosticSignWarn", text = ">>" },
     { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignInfo", text = "" },
   }
   for _, sign in ipairs(signs) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
@@ -37,7 +38,7 @@ end
     virtual_text = true,
     update_in_insert = true,
     underline = false,
-    severity_sort = false,
+    severity_sort = true,
     float = {
       focusable = true,
       style = "minimal",
