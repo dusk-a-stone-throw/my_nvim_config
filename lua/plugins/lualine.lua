@@ -6,6 +6,7 @@ local function totalLines()
 end
 require('lualine').setup {
   options = {
+    symbols = {added = '', modified = '', removed = ''},
     icons_enabled = true,
     theme = 'comfort',
     component_separators = { left = '', right = ''},
