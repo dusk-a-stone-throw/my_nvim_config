@@ -34,3 +34,7 @@ set.foldexpr = 'nvim_treesitter#foldexpr()'
 set.foldlevel = 999
 -- Better colors
 set.termguicolors = true
+-- Don't make swap files
+set.swapfile = false
+-- Ignore unsaved buffers
+set.hidden = true
