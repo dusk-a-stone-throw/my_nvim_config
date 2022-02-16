@@ -27,5 +27,5 @@ g.dashboard_custom_section = {
    f = { description = { "  Load Last Session         SPC l  " }, command = "SessionLoad" },
 }
 g.dashboard_custom_footer = {
-    ''
+    'By Vargoshi...'
 }

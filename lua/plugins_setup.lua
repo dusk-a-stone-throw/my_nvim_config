@@ -19,7 +19,7 @@ require('plugins.ts-rainbow')
 -- Nvim lsp completion
 require('LSP_config.nvim-lspconfig')
 require('LSP_config.nvim-cmp')
-require('LSP_config.lspsaga-nvim')
+-- require('LSP_config.lspsaga-nvim')
 -- Diagnostic config
 require('LSP_config.diagnostic')
 -- Code formatter
