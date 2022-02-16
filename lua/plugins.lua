@@ -61,9 +61,12 @@ return require('packer').startup(function()
     }
     -- Formatting
     use 'mhartington/formatter.nvim'
+    -- Theme switcher
+    use 'xolox/vim-colorscheme-switcher'
+        -- Required
+        use 'xolox/vim-misc'
     -- Themes
     use 'navarasu/onedark.nvim'
-    use 'Mofiqul/vscode.nvim'
     use 'folke/tokyonight.nvim'
     use 'marko-cerovac/material.nvim'
     use 'ChristianChiarulli/nvcode-color-schemes.vim'
