@@ -26,3 +26,5 @@ require('LSP_config.diagnostic')
 require('plugins.formatter')
 -- Git integration
 require('plugins.gitsigns')
+-- Automatically creates missing directories on saving a file
+require('mkdir')

@@ -1,4 +1,15 @@
 return require('packer').startup(function()
+    -- Cheat sheet
+    use {
+    'sudormrfbin/cheatsheet.nvim',
+        requires = {
+            {'nvim-telescope/telescope.nvim'},
+            {'nvim-lua/popup.nvim'},
+            {'nvim-lua/plenary.nvim'},
+        }
+    }
+    -- Automatically creates missing dirs when saving a file
+    use 'jghauser/mkdir.nvim'
     -- Git integration
     use  'lewis6991/gitsigns.nvim'
     -- Optimiser
