@@ -28,9 +28,9 @@ map('n', '<Leader>fa', ':DashboardFindWord<CR>', { noremap = true, silent = true
 map('n', '<Leader>fb', ':DashboardJumpMark<CR>', { noremap = true, silent = true, })
 -- Folding
 map('n', '<C-f>', 'za', {noremap = true, silent = true})
--- Colorscheme switcher
-map('n', '<Leader>tm', ':NextColorScheme<CR>', { noremap = true, silent = true} )
 -- Disable matching highlight
 map('n', '<Leader>nh', ':noh<CR>', {noremap = true, silent = true})
 -- Toggle terminal
 map('n', '<Leader>tr', ':FTermToggle<CR>', {noremap = true, silent = true})
+-- Toggle nvim-tree
+map('n', '<Leader>fl', ':NvimTreeToggle<CR>', {noremap = true, silent = true})

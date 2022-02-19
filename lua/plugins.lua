@@ -36,6 +36,8 @@ return require('packer').startup(function()
             'nvim-telescope/telescope.nvim',
             requires = { {'nvim-lua/plenary.nvim'} }
         }
+        -- File explorer
+        use 'kyazdani42/nvim-tree.lua'
 
 
 
@@ -71,11 +73,6 @@ return require('packer').startup(function()
         use 'ChristianChiarulli/nvcode-color-schemes.vim'
         use 'rafamadriz/neon'
 
-        -- Theme switcher
-        use 'xolox/vim-colorscheme-switcher'
-            -- Required
-            use 'xolox/vim-misc'
-
 
 
 -- ======================== Nvim LSP ======================== 
@@ -85,13 +82,16 @@ return require('packer').startup(function()
     use 'williamboman/nvim-lsp-installer'
         -- Autocomplete
             -- Nvim-cmp
+            use 'hrsh7th/nvim-cmp'
             use 'hrsh7th/cmp-nvim-lsp'
             use 'hrsh7th/cmp-buffer'
             use 'hrsh7th/cmp-path'
             use 'hrsh7th/cmp-cmdline'
-            use 'hrsh7th/nvim-cmp'
-            -- use 'hrsh7th/cmp-vsnip'
             use 'saadparwaiz1/cmp_luasnip'
+            use 'hrsh7th/cmp-nvim-lua'
+            use 'petertriho/cmp-git'
+                -- Better sorting
+                use 'lukas-reineke/cmp-under-comparator'
         -- Snippets
         use 'L3MON4D3/LuaSnip'
 
@@ -102,5 +102,9 @@ return require('packer').startup(function()
         use 'sudormrfbin/cheatsheet.nvim'
             -- Required
             use 'nvim-lua/popup.nvim'
+        -- LOL
+            use 'seandewar/nvimesweeper' -- :Nvimesweeper, :lua math.randomseed(os.time())
+            use 'alec-gibson/nvim-tetris' -- :Tetris
+            use 'ThePrimeagen/vim-be-good'
 
 end)
