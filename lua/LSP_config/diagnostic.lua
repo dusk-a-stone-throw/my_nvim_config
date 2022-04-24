@@ -1,4 +1,6 @@
 -- Highlight line numbers
+--
+--
 -- Diagnostic signs
   local signs = {
     { name = "DiagnosticSignError", text = ">>" },

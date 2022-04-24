@@ -1,5 +1,5 @@
 local g = vim.get_server
-local servers = { 'clangd', 'sumneko_lua' }
+local servers = { 'clangd', 'sumneko_lua', 'pyright' }
 local lsp_installer_servers = require('nvim-lsp-installer.servers')
 -- NVIM-LSPCONFIG
 for _, server_name in pairs(servers) do
