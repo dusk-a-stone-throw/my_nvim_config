@@ -1,6 +1,34 @@
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     -- Optimiser (should be on the top)
     use 'lewis6991/impatient.nvim'
+
+-- ======================== Nvim LSP ======================== 
+    use 'neovim/nvim-lspconfig'
+    use 'williamboman/nvim-lsp-installer'
+        -- Autocomplete
+            -- AI autocomplete
+            use {
+                'zbirenbaum/copilot.lua',
+                'zbirenbaum/copilot-cmp',
+                after = { 'copilot.lua', 'nvim-cmp' },
+            }
+            -- Nvim-cmp
+            use 'hrsh7th/nvim-cmp'
+            use 'hrsh7th/cmp-nvim-lsp'
+            use 'hrsh7th/cmp-buffer'
+            use 'hrsh7th/cmp-path'
+            -- use 'hrsh7th/cmp-cmdline'
+            use 'saadparwaiz1/cmp_luasnip'
+            use 'hrsh7th/cmp-nvim-lua'
+            use 'petertriho/cmp-git'
+                -- Better sorting
+                use 'lukas-reineke/cmp-under-comparator'
+            -- CMD autocomplete
+            use 'gelguy/wilder.nvim'
+                -- Required 
+                use 'romgrk/fzy-lua-native'
+        -- Snippets
+        use 'L3MON4D3/LuaSnip'
 
 
 
@@ -30,7 +58,7 @@ return require('packer').startup(function()
         -- Move lines
         use 'fedepujol/move.nvim'
         -- Folding
-        use 'pierreglaser/folding-nvim'
+        -- use 'pierreglaser/folding-nvim'
         -- Searcher
         use {
             'nvim-telescope/telescope.nvim',
@@ -72,28 +100,9 @@ return require('packer').startup(function()
         use 'marko-cerovac/material.nvim'
         use 'ChristianChiarulli/nvcode-color-schemes.vim'
         use 'rafamadriz/neon'
-
-
-
--- ======================== Nvim LSP ======================== 
-    use 'neovim/nvim-lspconfig'
-    -- Renaming etc
-    use 'glepnir/lspsaga.nvim'
-    use 'williamboman/nvim-lsp-installer'
-        -- Autocomplete
-            -- Nvim-cmp
-            use 'hrsh7th/nvim-cmp'
-            use 'hrsh7th/cmp-nvim-lsp'
-            use 'hrsh7th/cmp-buffer'
-            use 'hrsh7th/cmp-path'
-            use 'hrsh7th/cmp-cmdline'
-            use 'saadparwaiz1/cmp_luasnip'
-            use 'hrsh7th/cmp-nvim-lua'
-            use 'petertriho/cmp-git'
-                -- Better sorting
-                use 'lukas-reineke/cmp-under-comparator'
-        -- Snippets
-        use 'L3MON4D3/LuaSnip'
+        use 'tjdevries/colorbuddy.vim'
+        use 'Th3Whit3Wolf/onebuddy'
+        use 'projekt0n/github-nvim-theme'
 
 
 
