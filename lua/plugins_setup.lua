@@ -29,3 +29,7 @@ require('plugins.gitsigns')
 require('mkdir')
 -- File explorer
 require('plugins.nvim-tree')
+-- Wild menu autocomplete
+require('plugins.wilder-nvim')
+-- Better folding
+-- require('plugins.folding-nvim')

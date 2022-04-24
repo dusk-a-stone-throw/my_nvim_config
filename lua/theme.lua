@@ -19,9 +19,20 @@ require('onedark').setup {
     toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'},
 
 }
+
 -- Tokyo night
-g.tokyonight_style = "night"
--- Setup
+g.tokyonight_style = 'night'
+
+-- Github-nvim-theme (light)
+require('github-theme').setup({
+  theme_style = 'light', -- dark/dimmed/dark_default/dark_colorblind/light/light_default/light_colorblind
+  function_style = 'NONE',
+  keyword_style = 'NONE',
+  sidebars = {'qf', 'vista_kind', 'terminal', 'packer'},
+})
+
+
+-- ========== Setup ==========
 -- Better background color
 if vim.cmd[[ :silent colorscheme ]]=='nvcode' then
     vim.cmd [[ hi Normal guifg=#abb2bf ctermfg=249 guibg=#121212 ctermbg=234 gui=NONE cterm=NONE ]]

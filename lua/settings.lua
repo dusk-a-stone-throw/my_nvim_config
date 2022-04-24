@@ -2,10 +2,10 @@ local g = vim.g
 local set = vim.opt
 set.number = true
 -- Show spaces
-set.listchars:append({ space = '·', trail= '·'})
+set.listchars:append({ space = '·', trail = '·' })
 set.list = true
-set.fileencoding='utf-8'
-set.encoding='utf-8'
+set.fileencoding = 'utf-8'
+set.encoding = 'utf-8'
 -- Indent settings
 set.expandtab = true
 set.smarttab = true
@@ -29,8 +29,8 @@ set.wrap = false
 set.cursorline = false
 set.cursorcolumn = false
 -- Better folding
-set.foldmethod='expr'
-set.foldexpr = 'nvim_treesitter#foldexpr()'
+-- set.foldmethod='expr'
+-- set.foldexpr = 'nvim_treesitter#foldexpr()'
 set.foldlevel = 999
 -- Better colors
 set.termguicolors = true
@@ -38,3 +38,4 @@ set.termguicolors = true
 set.swapfile = false
 -- Ignore unsaved buffers
 set.hidden = true
+set.autoread = true
