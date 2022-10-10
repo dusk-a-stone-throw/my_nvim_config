@@ -17,19 +17,18 @@ require('formatter').setup({
                 }
             end
         },
-        -- python = {
-        --     function()
-        --         vim.lsp.buf.formatting_sync()
-        --         return {
-        --             exe = "python3 -m autopep8",
-        --             args = {
-        --                 "--in-place --aggressive",
-        --                 vim.fn.fnameescape(vim.api.nvim_buf_get_name(0))
-        --             },
-        --             stdin = false
-        --         }
-        --     end
-        -- },
+        python = {
+            function()
+                vim.lsp.buf.formatting_sync()
+                return {
+                    exe = "yapf",
+                    args = {
+                        "-i", vim.api.nvim_buf_get_name(0)
+                    },
+                    stdin = false,
+                }
+            end
+        },
         lua = {
             function()
                 vim.lsp.buf.formatting_sync()

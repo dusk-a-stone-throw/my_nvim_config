@@ -1,5 +1,3 @@
--- Highlight line numbers
---
 --
 -- Diagnostic signs
   local signs = {

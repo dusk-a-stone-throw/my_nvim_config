@@ -1,5 +1,6 @@
 local g = vim.g
 local set = vim.opt
+local api = vim.api
 set.number = true
 -- Show spaces
 set.listchars:append({ space = '·', trail = '·' })
@@ -39,3 +40,4 @@ set.swapfile = false
 -- Ignore unsaved buffers
 set.hidden = true
 set.autoread = true
+api.nvim_command('call wilder#enable_cmdline_enter()')
