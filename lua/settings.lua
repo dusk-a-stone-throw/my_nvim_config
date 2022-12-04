@@ -30,8 +30,8 @@ set.wrap = false
 set.cursorline = false
 set.cursorcolumn = false
 -- Better folding
--- set.foldmethod='expr'
--- set.foldexpr = 'nvim_treesitter#foldexpr()'
+set.foldmethod='expr'
+set.foldexpr = 'nvim_treesitter#foldexpr()'
 set.foldlevel = 999
 -- Better colors
 set.termguicolors = true

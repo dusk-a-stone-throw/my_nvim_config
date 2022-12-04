@@ -8,7 +8,7 @@ require('lualine').setup {
   options = {
     symbols = {added = '', modified = '', removed = ''},
     icons_enabled = true,
-    theme = 'comfort',
+    theme = 'auto',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {},
