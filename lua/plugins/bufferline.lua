@@ -12,7 +12,6 @@ local colors = {
 require('bufferline').setup {
     options = {
       offsets = { { filetype = 'NvimTree', text = '', padding = 1 } },
-      indicator_icon = '',
       buffer_close_icon = '',
       modified_icon = '',
       close_icon = '',
@@ -29,6 +28,7 @@ require('bufferline').setup {
       separator_style = { '', '' },
       always_show_bufferline = true,
       diagnostics = false,
+      indicator = { style = "icon", icon = " " },
     },
 
     highlights = {
