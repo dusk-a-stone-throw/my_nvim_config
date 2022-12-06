@@ -33,93 +33,93 @@ require('bufferline').setup {
 
     highlights = {
       background = {
-        guifg = colors.grey_1,
-        guibg = colors.none,
+        fg = colors.grey_1,
+        bg = colors.none,
       },
 
       -- Buffers
       buffer_selected = {
-        guifg = colors.grey,
-        guibg = colors.black,
-        gui = colors.none,
+        fg = colors.grey,
+        bg = colors.black,
+        underline = false, undercurl = false,italic = false
       },
       buffer_visible = {
-        guifg = colors.grey,
-        guibg = colors.black,
+        fg = colors.grey,
+        bg = colors.black,
       },
 
       -- Diagnostics
       error = {
-        guifg = colors.red_1,
-        guibg = colors.red_1,
+        fg = colors.red_1,
+        bg = colors.red_1,
       },
       error_diagnostic = {
-        guifg = colors.red_1,
-        guibg = colors.red_1,
+        fg = colors.red_1,
+        bg = colors.red_1,
       },
 
       -- Close buttons
       close_button = {
-        guifg = colors.grey_1,
-        guibg = colors.none,
+        fg = colors.grey_1,
+        bg = colors.none,
       },
       close_button_visible = {
-        guifg = colors.grey_2,
-        guibg = colors.black,
+        fg = colors.grey_2,
+        bg = colors.black,
       },
       close_button_selected = {
-        guifg = colors.red,
-        guibg = colors.black,
+        fg = colors.red,
+        bg = colors.black,
       },
       fill = {
-        guifg = colors.grey_1,
-        guibg = colors.none,
+        fg = colors.grey_1,
+        bg = colors.none,
       },
       indicator_selected = {
-        guifg = colors.black,
-        guibg = colors.black,
+        fg = colors.black,
+        bg = colors.black,
       },
 
       -- Modified
       modified = {
-        guifg = colors.red,
-        guibg = colors.none,
+        fg = colors.red,
+        bg = colors.none,
       },
       modified_visible = {
-        guifg = colors.grey,
-        guibg = colors.black,
+        fg = colors.grey,
+        bg = colors.black,
       },
       modified_selected = {
-        guifg = colors.green,
-        guibg = colors.black,
+        fg = colors.green,
+        bg = colors.black,
       },
 
       -- Separators
       separator = {
-        guifg = colors.none,
-        guibg = colors.none,
+        fg = colors.none,
+        bg = colors.none,
       },
       separator_visible = {
-        guifg = colors.black,
-        guibg = colors.black,
+        fg = colors.black,
+        bg = colors.black,
       },
       separator_selected = {
-        guifg = colors.none,
-        guibg = colors.none,
+        fg = colors.none,
+        bg = colors.none,
       },
 
       -- Tabs
       tab = {
-        guifg = colors.grey,
-        guibg = colors.black,
+        fg = colors.grey,
+        bg = colors.black,
       },
       tab_selected = {
-        guifg = colors.black,
-        guibg = colors.black,
+        fg = colors.black,
+        bg = colors.black,
       },
       tab_close = {
-        guifg = colors.black,
-        guibg = colors.black,
+        fg = colors.black,
+        bg = colors.black,
       },
     },
   }
