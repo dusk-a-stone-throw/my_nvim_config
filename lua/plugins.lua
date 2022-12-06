@@ -103,8 +103,8 @@ return require('packer').startup(function(use)
         use 'tjdevries/colorbuddy.vim'
         use 'Th3Whit3Wolf/onebuddy'
         use 'projekt0n/github-nvim-theme'
-
-
+        use 'Mofiqul/vscode.nvim'
+        use 'tanvirtin/monokai.nvim'
 
 -- ======================== Other stuff ======================== 
         -- Cheat sheet
