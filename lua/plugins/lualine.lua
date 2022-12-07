@@ -25,7 +25,7 @@ require('lualine').setup {
     lualine_a = {'branch'},
     lualine_b = {},
     lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {totalLines}
   },
