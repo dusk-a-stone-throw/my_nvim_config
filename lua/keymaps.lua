@@ -20,12 +20,11 @@ map('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>')
 -- LSP renaming
 map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', {silent = true})
 -- Dashboard.nvim
-map('n', '<Leader>ff', ':DashboardFindFile<CR>', { noremap = true, silent = true, })
-map('n', '<Leader>fh', ':DashboardFindHistory<CR>', { noremap = true, silent = true, })
-map('n', '<Leader>tc', ':DashboardChangeColorscheme<CR>', { noremap = true, silent = true, })
+map('n', '<Leader>ff', ':Telescope find_files find_command=rg,--hidden,--files<CR>', { noremap = true, silent = true, })
+map('n', '<Leader>fh', ':Telescope oldfiles<CR>', { noremap = true, silent = true, })
+map('n', '<Leader>tc', ':Telescope colorscheme<CR>', { noremap = true, silent = true, })
 map('n', '<Leader>cn', ':DashboardNewFile<CR>', { noremap = true, silent = true, })
-map('n', '<Leader>fa', ':DashboardFindWord<CR>', { noremap = true, silent = true, })
-map('n', '<Leader>fb', ':DashboardJumpMark<CR>', { noremap = true, silent = true, })
+map('n', '<Leader>fa', ':Telescope live_grep<CR>', { noremap = true, silent = true, })
 -- Folding
 map('n', '<C-f>', 'za', {noremap = true, silent = true})
 -- Disable matching highlight
