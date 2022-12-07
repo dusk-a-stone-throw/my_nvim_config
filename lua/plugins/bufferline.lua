@@ -28,98 +28,50 @@ require('bufferline').setup {
       separator_style = { '', '' },
       always_show_bufferline = true,
       diagnostics = false,
-      indicator = { style = "icon", icon = " " },
+      indicator = { style = 'icon', icon = '' },
     },
-
-    highlights = {
-      background = {
-        fg = colors.grey_1,
-        bg = colors.none,
-      },
-
-      -- Buffers
-      buffer_selected = {
-        fg = colors.grey,
-        bg = colors.black,
-        underline = false, undercurl = false,italic = false
-      },
-      buffer_visible = {
-        fg = colors.grey,
-        bg = colors.black,
-      },
-
-      -- Diagnostics
-      error = {
-        fg = colors.red_1,
-        bg = colors.red_1,
-      },
-      error_diagnostic = {
-        fg = colors.red_1,
-        bg = colors.red_1,
-      },
-
-      -- Close buttons
-      close_button = {
-        fg = colors.grey_1,
-        bg = colors.none,
-      },
-      close_button_visible = {
-        fg = colors.grey_2,
-        bg = colors.black,
-      },
-      close_button_selected = {
-        fg = colors.red,
-        bg = colors.black,
-      },
-      fill = {
-        fg = colors.grey_1,
-        bg = colors.none,
-      },
-      indicator_selected = {
-        fg = colors.black,
-        bg = colors.black,
-      },
-
-      -- Modified
-      modified = {
-        fg = colors.red,
-        bg = colors.none,
-      },
-      modified_visible = {
-        fg = colors.grey,
-        bg = colors.black,
-      },
-      modified_selected = {
-        fg = colors.green,
-        bg = colors.black,
-      },
-
-      -- Separators
-      separator = {
-        fg = colors.none,
-        bg = colors.none,
-      },
-      separator_visible = {
-        fg = colors.black,
-        bg = colors.black,
-      },
-      separator_selected = {
-        fg = colors.none,
-        bg = colors.none,
-      },
-
-      -- Tabs
-      tab = {
-        fg = colors.grey,
-        bg = colors.black,
-      },
-      tab_selected = {
-        fg = colors.black,
-        bg = colors.black,
-      },
-      tab_close = {
-        fg = colors.black,
-        bg = colors.black,
-      },
+         highlights = {
+        fill = {
+            fg = { attribute = "fg", highlight = "Normal" },
+            bg = { attribute = "bg", highlight = "StatusLineNC" },
+        },
+        background = {
+            fg = { attribute = "fg", highlight = "Normal" },
+            bg = { attribute = "bg", highlight = "StatusLine" },
+        },
+        buffer_visible = {
+            italic= false,
+            fg = { attribute = "fg", highlight = "Normal" },
+            bg = { attribute = "bg", highlight = "Normal" },
+        },
+        buffer_selected = {
+            fg = { attribute = "fg", highlight = "Normal" },
+            bg = { attribute = "bg", highlight = "Normal" },
+            italic= false, bold = false
+        },
+        separator = {
+            fg = { attribute = "bg", highlight = "Normal" },
+            bg = { attribute = "bg", highlight = "StatusLine" },
+        },
+        separator_selected = {
+            fg = { attribute = "fg", highlight = "Special" },
+            bg = { attribute = "bg", highlight = "Normal" },
+        },
+        separator_visible = {
+            fg = { attribute = "fg", highlight = "Normal" },
+            bg = { attribute = "bg", highlight = "StatusLineNC" },
+        },
+        close_button = {
+            fg = { attribute = "fg", highlight = "Normal" },
+            bg = { attribute = "bg", highlight = "StatusLine" },
+        },
+        close_button_selected = {
+            fg = { attribute = "fg", highlight = "normal" },
+            bg = { attribute = "bg", highlight = "normal" },
+        },
+        close_button_visible = {
+            fg = { attribute = "fg", highlight = "normal" },
+            bg = { attribute = "bg", highlight = "normal" },
+        },
     },
   }
