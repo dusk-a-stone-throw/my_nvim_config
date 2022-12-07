@@ -1,4 +1,8 @@
 local g = vim.g
+local c = require('vscode.colors')
+
+
+
 -- One dark theme
 require('onedark').setup {
     style = 'darker',
@@ -20,8 +24,12 @@ require('onedark').setup {
 
 }
 
+
+
 -- Tokyo night
 g.tokyonight_style = 'night'
+
+
 
 -- Github-nvim-theme (light)
 require('github-theme').setup({
@@ -32,7 +40,19 @@ require('github-theme').setup({
 })
 
 
--- ========== Setup ==========
--- Better background color
 
-vim.cmd [[ colorscheme vscode]]
+-- VScode theme
+require('vscode').setup({
+    -- Enable transparent background
+    -- Override highlight groups (see ./lua/vscode/theme.lua)
+    group_overrides = {
+        -- this supports the same val table as vim.api.nvim_set_hl
+        -- use colors from this colorscheme by requiring vscode.colors!
+        BufferLineBufferSelected = { italic=false },
+    }
+})
+
+
+
+-- ========== Setup ==========
+-- vim.cmd [[ colorscheme vscode]]
