@@ -33,3 +33,5 @@ require('plugins.nvim-tree')
 require('plugins.wilder-nvim')
 -- Better folding
 -- require('plugins.folding-nvim')
+-- Fuzzy finder
+require('plugins.telescope')
