@@ -1,5 +1,5 @@
-require('settings')
 require('plugins')
+require('settings')
 require('commands')
 require('theme')
 require('plugins_setup')
