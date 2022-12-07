@@ -1,4 +1,6 @@
 return require('packer').startup(function(use)
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
     -- Optimiser (should be on the top)
     use 'lewis6991/impatient.nvim'
 
@@ -39,8 +41,6 @@ return require('packer').startup(function(use)
         use 'jghauser/mkdir.nvim'
         -- Git integration
         use  'lewis6991/gitsigns.nvim'
-        -- Packer can manage itself
-        use 'wbthomason/packer.nvim'
         -- Start page
         use 'glepnir/dashboard-nvim'
         -- Convert vim map to lua

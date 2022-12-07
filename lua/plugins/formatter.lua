@@ -8,7 +8,7 @@ require('formatter').setup({
     filetype = {
         cpp = {
             function()
-                vim.lsp.buf.formatting_sync()
+                vim.lsp.buf.format()
                 return {
                     exe = "clang-format",
                     args = { "--assume-filename", vim.api.nvim_buf_get_name(0) },
@@ -19,7 +19,7 @@ require('formatter').setup({
         },
         python = {
             function()
-                vim.lsp.buf.formatting_sync()
+                vim.lsp.buf.format()
                 return {
                     exe = "yapf",
                     args = {
@@ -31,7 +31,7 @@ require('formatter').setup({
         },
         lua = {
             function()
-                vim.lsp.buf.formatting_sync()
+                vim.lsp.buf.format()
                 return {
                     exe = "stylua",
                     args = {
