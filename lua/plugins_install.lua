@@ -90,7 +90,7 @@ return require('packer').startup(function(use)
 
         -- Rainbow brackets
         use 'p00f/nvim-ts-rainbow'
-        
+
         -- Awesome statusline
         use {
         'nvim-lualine/lualine.nvim',
@@ -104,7 +104,6 @@ return require('packer').startup(function(use)
         use 'navarasu/onedark.nvim'
         use 'folke/tokyonight.nvim'
         use 'marko-cerovac/material.nvim'
-        use 'ChristianChiarulli/nvcode-color-schemes.vim'
         use 'rafamadriz/neon'
         use 'tjdevries/colorbuddy.vim'
         use 'Th3Whit3Wolf/onebuddy'
