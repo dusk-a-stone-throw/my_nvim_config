@@ -4,6 +4,7 @@ return require('packer').startup(function(use)
     -- Optimiser (should be on the top)
     use 'lewis6991/impatient.nvim'
 -- ======================== Nvim LSP ======================== 
+    -- LSP installer manager
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
     use 'neovim/nvim-lspconfig'

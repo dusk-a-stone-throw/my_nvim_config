@@ -1,21 +1,21 @@
 -- Optimiser
 require('impatient')
 -- Floating term
-require('plugins.fterm')
+require('plugins_config.fterm')
 -- Nvim-autopairs
 require('nvim-autopairs').setup()
 -- Nvim-colorizer.lua
 require('colorizer').setup()
 -- Bufferline nvim
-require('plugins.bufferline')
+require('plugins_config.bufferline')
 -- Lualine.nvim
-require('plugins.lualine')
+require('plugins_config.lualine')
 -- Start page
-require('plugins.dashboard')
+require('plugins_config.dashboard')
 -- Awesome highlight
-require('plugins.treesitter')
+require('plugins_config.treesitter')
 -- Colored brackets
-require('plugins.ts-rainbow')
+require('plugins_config.ts-rainbow')
 -- Nvim lsp completion
 require('LSP_config.mason-nvim')
 require('LSP_config.mason-lsp-config')
@@ -24,16 +24,16 @@ require('LSP_config.nvim-cmp')
 -- Diagnostic config
 require('LSP_config.diagnostic')
 -- Code formatter
-require('plugins.formatter')
+require('plugins_config.formatter')
 -- Git integration
-require('plugins.gitsigns')
+require('plugins_config.gitsigns')
 -- Automatically creates missing directories on saving a file
 require('mkdir')
 -- File explorer
-require('plugins.nvim-tree')
+require('plugins_config.nvim-tree')
 -- Wild menu autocomplete
-require('plugins.wilder-nvim')
+require('plugins_config.wilder-nvim')
 -- Better folding
--- require('plugins.folding-nvim')
+-- require('plugins_config.folding-nvim')
 -- Fuzzy finder
-require('plugins.telescope')
+require('plugins_config.telescope')
