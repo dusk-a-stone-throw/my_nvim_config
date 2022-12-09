@@ -3,10 +3,10 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     -- Optimiser (should be on the top)
     use 'lewis6991/impatient.nvim'
-
 -- ======================== Nvim LSP ======================== 
+    use 'williamboman/mason.nvim'
+    use 'williamboman/mason-lspconfig.nvim'
     use 'neovim/nvim-lspconfig'
-    use 'williamboman/nvim-lsp-installer'
         -- Autocomplete
             -- AI autocomplete
             use {
@@ -66,6 +66,11 @@ return require('packer').startup(function(use)
         }
         -- File explorer
         use 'kyazdani42/nvim-tree.lua'
+        -- Markdown preview
+        use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+        })
 
 
 
@@ -84,8 +89,8 @@ return require('packer').startup(function(use)
 
         -- Rainbow brackets
         use 'p00f/nvim-ts-rainbow'
+        
         -- Awesome statusline
-
         use {
         'nvim-lualine/lualine.nvim',
         requires = { 'kyazdani42/nvim-web-devicons', opt = true }
