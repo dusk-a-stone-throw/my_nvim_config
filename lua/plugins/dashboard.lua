@@ -17,6 +17,7 @@ db.custom_header = {
     '       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     ',
     '         ⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋       ',
 }
+
 db.custom_center = {
     { icon = '  ',
         desc = 'New file                                ',

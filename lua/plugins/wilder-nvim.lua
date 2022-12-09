@@ -10,7 +10,7 @@ function wilder_init()
                 filters = { 'fuzzy_filter', 'difflib_sorter' },
             }),
             wilder.cmdline_pipeline({
-                language = 'python',
+                language = 'vim',
                 fuzzy = 1,
             }),
             wilder.python_search_pipeline({
