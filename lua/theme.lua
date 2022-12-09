@@ -44,7 +44,15 @@ require('tokyonight').setup({
     -- Background styles. Can be 'dark', 'transparent' or 'normal'
     sidebars = 'dark', -- style for sidebars, see below
     floats = 'dark', -- style for floating windows
-  }
+  },
+  lualine_bold = true,
+  hide_inactive_statusline = true,
+  on_highlights = function(hl, c)
+      hl.MatchParen = {
+        bg = '#5c5a5a',
+        bold = false
+    }
+  end,
 })
 
 
