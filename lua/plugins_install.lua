@@ -110,7 +110,8 @@ return require('packer').startup(function(use)
         use 'projekt0n/github-nvim-theme'
         use 'Mofiqul/vscode.nvim'
         use 'tanvirtin/monokai.nvim'
-
+        use 'shaunsingh/nord.nvim'
+        use 'Mofiqul/dracula.nvim'
 -- ======================== Other stuff ======================== 
         -- Cheat sheet
         use 'sudormrfbin/cheatsheet.nvim'

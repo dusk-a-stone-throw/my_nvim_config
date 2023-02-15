@@ -38,5 +38,5 @@ map('n', '<Leader>tr', ':FTermToggle<CR>', { noremap = true, silent = true })
 map('n', '<Leader>fl', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 -- Run current opened python file
 map('n', '<F5>',
-    ':lua require\'fterm\'.exec("clear && " .. "python3" .." " .. tostring(vim.api.nvim_buf_get_name(0))) vim.cmd [[startinsert]]<CR>'
+    ':lua require\'fterm\'.exec("clear && " .. "time " .. "python3" .." " .. tostring(vim.api.nvim_buf_get_name(0))) vim.cmd [[startinsert]]<CR>'
     , { noremap = true, silent = true })

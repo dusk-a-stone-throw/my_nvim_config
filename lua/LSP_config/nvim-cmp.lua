@@ -1,4 +1,5 @@
 -- Setup nvim-cmp.
+
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 local kind_icons = {
@@ -33,6 +34,12 @@ local check_backspace = function()
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 cmp.setup({
+    sources = cmp.config.sources({
+      { name = "copilot", group_index = 2 },
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' },
+      { name = "path", group_index = 2 },
+    }),
     formatting = {
       fields = { "kind", "abbr", "menu" },
       format = function(entry, vim_item)
@@ -82,12 +89,6 @@ cmp.setup({
       end
     end, { 'i', 's' }),
   }),
-    sources = cmp.config.sources({
-      { name = "copilot", group_index = 2 },
-      { name = 'nvim_lsp' },
-      { name = 'luasnip' }, 
-          { name = "path", group_index = 2 },
-    })
   })
 
   -- Set configuration for specific filetype.
@@ -100,13 +101,13 @@ cmp.setup({
   })
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    })
-  })
+  -- cmp.setup.cmdline(':', {
+  --   sources = cmp.config.sources({
+  --     { name = 'path' }
+  --   }, {
+  --     { name = 'cmdline' }
+  --   })
+  -- })
 
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())

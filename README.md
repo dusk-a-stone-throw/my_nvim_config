@@ -1,17 +1,17 @@
 # Vargoshi neovim config
 ![Preview](pics/preview.png)
 ## Requirements
-[nvim V8.0.1](https://github.com/neovim/neovim)
+[⏺nvim V8.0.1](https://github.com/neovim/neovim)
 
-[NERD FONTS](https://github.com/ryanoasis/nerd-fonts)
+[⏺nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 
-[packer.nvim](https://github.com/wbthomason/packer.nvim)
+[⏺packer.nvim](https://github.com/wbthomason/packer.nvim)
 
-[pynvim](https://github.com/neovim/pynvim)
+[⏺pynvim](https://github.com/neovim/pynvim)
 
-[ripgrep](https://github.com/BurntSushi/ripgrep)
+[⏺ripgrep](https://github.com/BurntSushi/ripgrep)
 
-[fzf](https://github.com/junegunn/fzf)
+[⏺FZF](https://github.com/junegunn/fzf)
 ## Starting up
 Backup your previous config:  
 ```shell
@@ -25,6 +25,8 @@ git clone https://github.com/dusk-a-stone-throw/my_nvim_config
 mv my_nvim_config/* ~/.config/nvim
 rm -rf my_nvim_config
 ```
+Run `nvim` and face some errors, but ignore them.  
+After that run `:PackerInstall` to install necessary plugins.
 ## Used plugins
 [packer.nvim](https://github.com/wbthomason/packer.nvim) — Awesome plugin manager  
 [mason.nvim](https://github.com/williamboman/mason.nvim) — Nvim package manager for LSP servers, linters, formatters etc.  
@@ -43,6 +45,13 @@ require('lspconfig')['YOUR_SERVER_NAME'].setup {
   capabilities = capabilities
 }
 ```
+### Formatting
+**Python**, **C++** and **Lua** are preconfigurated.  
+(For **Python** you need [`yapf`](https://github.com/google/yapf) installed, for **C++** you need
+[`clang-format`](https://clang.llvm.org/docs/ClangFormat.html),
+for **Lua** you need [`stylua`](https://github.com/JohnnyMorganz/StyLua)).  
+Open `plugins_config/formatter.lua` and setup any formatter you need,
+see [formatter.nvim](https://github.com/mhartington/formatter.nvim).
 ### Theme
 Open `theme.lua` and change
 ```lua
@@ -62,12 +71,12 @@ For example:
 map('n', '<C-Up>', ':MoveLine(-1)<CR>', { silent = true }) -- Move current line upwards
 ```
 ### Plugins config files
-LSP plugins configs located in `LSP_config`  
-Other plugins configs located in `plugins_config`
+LSP plugins configs located in `LSP_config`.  
+Other plugins configs located in `plugins_config`.
 ### Customization
 #### Dashboard
-You can change Dashboard start ascii-art, see [this collection.](https://github.com/glepnir/dashboard-nvim/wiki/Ascii-Header-Text)  
-Or make [your own header.](https://xflea.github.io/nv-dashboard-header-maker/)  
+You can change Dashboard start ascii-art, see [this collection](https://github.com/glepnir/dashboard-nvim/wiki/Ascii-Header-Text).  
+Or make [your own header](https://xflea.github.io/nv-dashboard-header-maker/).  
 Great thanks to [glepnir](https://github.com/glepnir) and [xflea](https://github.com/xflea) for that.
 
-You can customoize other plugins according their documentation.
+You can customoize and configure other plugins according their documentation.
