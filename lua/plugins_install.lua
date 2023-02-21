@@ -43,7 +43,9 @@ return require('packer').startup(function(use)
         -- Git integration
         use  'lewis6991/gitsigns.nvim'
         -- Start page
-        use 'glepnir/dashboard-nvim'
+        use {
+            'glepnir/dashboard-nvim',
+        }
         -- Convert vim map to lua
         use 'thugcee/nvim-map-to-lua'
         -- Multiple cursors
@@ -92,14 +94,13 @@ return require('packer').startup(function(use)
         use 'p00f/nvim-ts-rainbow'
 
         -- Awesome statusline
-        use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-        }
+        use 'nvim-lualine/lualine.nvim'
 
         -- Awesome bufferline
         use 'akinsho/bufferline.nvim'
 
+        -- Icons
+        use 'nvim-tree/nvim-web-devicons'
         -- Themes
         use 'navarasu/onedark.nvim'
         use 'folke/tokyonight.nvim'

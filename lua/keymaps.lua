@@ -27,7 +27,7 @@ map('n', '<Leader>ff', ':Telescope find_files find_command=rg,--hidden,--files<C
 map('n', '<Leader>fh', ':Telescope oldfiles<CR>', { noremap = true, silent = true, })
 map('n', '<Leader>tc', ':Telescope colorscheme<CR>', { noremap = true, silent = true, })
 map('n', '<Leader>cn', ':DashboardNewFile<CR>', { noremap = true, silent = true, })
-map('n', '<Leader>fa', ':Telescope live_grep<CR>', { noremap = true, silent = true, })
+map('n', '<Leader>fw', ':Telescope live_grep<CR>', { noremap = true, silent = true, })
 -- Folding
 map('n', '<C-f>', 'za', { noremap = true, silent = true })
 -- Disable matching highlight

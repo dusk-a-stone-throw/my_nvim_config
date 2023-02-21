@@ -1,7 +1,7 @@
 vim.api.nvim_exec([[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost * FormatWrite
+  autocmd BufWritePost * silent! FormatWrite
 augroup END
 ]], true)
 require('formatter').setup({
@@ -10,10 +10,12 @@ require('formatter').setup({
             function()
                 vim.lsp.buf.format()
                 return {
-                    exe = "clang-format",
-                    args = { "--assume-filename", vim.api.nvim_buf_get_name(0) },
+                    exe = 'clang-format',
+                    args = { '--assume-filename',
+                        vim.api.nvim_buf_get_name(0),
+                    },
                     stdin = true,
-                    cwd = vim.fn.expand('%:p:h') -- Run clang-format in cwd of the file.
+                    cwd = vim.fn.expand('%:p:h'), -- Run clang-format in cwd of the file.
                 }
             end
         },
@@ -21,9 +23,10 @@ require('formatter').setup({
             function()
                 vim.lsp.buf.format()
                 return {
-                    exe = "yapf",
+                    exe = 'yapf',
                     args = {
-                        "-i", vim.api.nvim_buf_get_name(0)
+                        '-i',
+                        vim.api.nvim_buf_get_name(0),
                     },
                     stdin = false,
                 }
@@ -33,12 +36,9 @@ require('formatter').setup({
             function()
                 vim.lsp.buf.format()
                 return {
-                    exe = "stylua",
+                    exe = 'stylua',
                     args = {
-                        -- "--config-path "
-                        --   .. os.getenv("XDG_CONFIG_HOME")
-                        --   .. "/stylua/stylua.toml",
-                        -- "-",
+                        '--search-parent-directories',
                     },
                     stdin = true,
                 }
