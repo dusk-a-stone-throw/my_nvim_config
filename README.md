@@ -38,20 +38,26 @@ After that run `:PackerInstall` to install necessary plugins.
 [fterm.nvim](https://github.com/iajiawang/fterm.nvim) — Useful floating terminal  
 ## Configuration
 ### LSP
+
 Run `:Mason` to install LSP servers you need.  
-To add a LSP server, you should go to `LSP_config/nvim-cmp.lua` and add this to the end of file:  
+For **Python** `pyright` is used by default (install it),
+for **Lua** default is `lua_ls` (***lua-language-server***),
+for **Cpp** `clangd`.  
+To add a LSP server, you run `:Mason` and install all you need, then go to `LSP_config/nvim-cmp.lua` and add this to the end of file:  
 ```lua
 require('lspconfig')['YOUR_SERVER_NAME'].setup {
   capabilities = capabilities
 }
 ```
+See [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig), [configs](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md),
+[mason](https://github.com/williamboman/mason.nvim), and [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 ### Formatting
 **Python**, **C++** and **Lua** are preconfigurated.  
 (For **Python** you need [`yapf`](https://github.com/google/yapf) installed, for **C++** you need
 [`clang-format`](https://clang.llvm.org/docs/ClangFormat.html),
 for **Lua** you need [`stylua`](https://github.com/JohnnyMorganz/StyLua)).  
-Open `plugins_config/formatter.lua` and setup any formatter you need,
-see [formatter.nvim](https://github.com/mhartington/formatter.nvim).
+Open `plugins_config/null-ls.lua` and setup any formatter you need,
+see [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim).
 ### Theme
 Open `theme.lua` and change
 ```lua
