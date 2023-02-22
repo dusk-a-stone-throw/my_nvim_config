@@ -24,7 +24,7 @@ require('LSP_config.nvim-cmp')
 -- Diagnostic config
 require('LSP_config.diagnostic')
 -- Code formatter
-require('plugins_config.formatter')
+require('plugins_config.null-ls')
 -- Git integration
 require('plugins_config.gitsigns')
 -- Automatically creates missing directories on saving a file

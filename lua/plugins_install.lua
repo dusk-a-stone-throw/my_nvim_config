@@ -37,7 +37,7 @@ return require('packer').startup(function(use)
 
 -- ======================== Utility ========================
         -- Formatting
-        use 'mhartington/formatter.nvim'
+        use 'jose-elias-alvarez/null-ls.nvim'
         -- Automatically creates missing dirs when saving a file
         use 'jghauser/mkdir.nvim'
         -- Git integration
