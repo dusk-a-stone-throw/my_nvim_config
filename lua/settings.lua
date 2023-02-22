@@ -40,4 +40,6 @@ set.swapfile = false
 -- Ignore unsaved buffers
 set.hidden = true
 set.autoread = true
+-- Don't need for ruler use statusline instead
+set.ruler=false
 api.nvim_command('call wilder#enable_cmdline_enter()')
