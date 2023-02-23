@@ -87,9 +87,12 @@ return require('packer').startup(function(use)
         -- Awesome highlighting
         use {
             'nvim-treesitter/nvim-treesitter',
-            run = ':TSUpdate'
+            run = function()
+                -- To ignore error at first time
+                local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+                ts_update()
+            end,
         }
-
         -- Rainbow brackets
         use 'p00f/nvim-ts-rainbow'
 
