@@ -56,8 +56,13 @@ See [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig), [configs](https:
 (For **Python** you need [`yapf`](https://github.com/google/yapf) installed, for **C++** you need
 [`clang-format`](https://clang.llvm.org/docs/ClangFormat.html),
 for **Lua** you need [`stylua`](https://github.com/JohnnyMorganz/StyLua)).  
+You may install them with `:Mason`.  
 Open `plugins_config/null-ls.lua` and setup any formatter you need,
 see [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim).
+### Treesitter highlighting
+**Python**, **C++** and **Lua** parsers will be installed at startup,
+to install other ones you may run `:TSInstall <NAME>`.  
+For configuration see `plugins_config/treesitter.lua`.
 ### Theme
 Open `theme.lua` and change
 ```lua
