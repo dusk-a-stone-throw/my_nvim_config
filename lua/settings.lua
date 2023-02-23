@@ -32,9 +32,17 @@ set.wrap = false
 set.cursorline = false
 set.cursorcolumn = false
 -- Better folding
-set.foldmethod='expr'
-set.foldexpr = 'nvim_treesitter#foldexpr()'
+set.foldenable = false
 set.foldlevel = 999
+-- Users of packer.nvim have reported that when using treesitter for folds, they sometimes receive an error "No folds found",
+-- or that treesitter highlighting does not apply. A workaround for this is to set the folding options in an autocmd:
+api.nvim_create_autocmd({ 'BufEnter', 'BufAdd', 'BufNew', 'BufNewFile', 'BufWinEnter' }, {
+    group = vim.api.nvim_create_augroup('TS_FOLD_WORKAROUND', {}),
+    callback = function()
+        vim.opt.foldmethod = 'expr'
+        vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+    end,
+})
 -- Better colors
 set.termguicolors = true
 -- Don't make swap files
@@ -43,5 +51,5 @@ set.swapfile = false
 set.hidden = true
 set.autoread = true
 -- Don't need for ruler use statusline instead
-set.ruler=false
+set.ruler = false
 api.nvim_command('call wilder#enable_cmdline_enter()')

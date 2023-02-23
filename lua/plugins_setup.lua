@@ -33,7 +33,5 @@ require('mkdir')
 require('plugins_config.nvim-tree')
 -- Wild menu autocomplete
 require('plugins_config.wilder-nvim')
--- Better folding
--- require('plugins_config.folding-nvim')
 -- Fuzzy finder
 require('plugins_config.telescope')
