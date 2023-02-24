@@ -1,7 +1,7 @@
 local null_ls = require('null-ls')
 vim.cmd([[
 autocmd!
-autocmd BufWritePre * undojoin | lua vim.lsp.buf.format()
+autocmd BufWritePre * silent! undojoin | lua vim.lsp.buf.format()
 ]])
 null_ls.setup({
     sources = {
