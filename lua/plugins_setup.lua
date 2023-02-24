@@ -19,7 +19,6 @@ require('plugins_config.ts-rainbow')
 -- Nvim lsp completion
 require('LSP_config.mason-nvim')
 require('LSP_config.mason-lsp-config')
--- require('LSP_config.nvim-lspconfig')
 require('LSP_config.nvim-cmp')
 -- Diagnostic config
 require('LSP_config.diagnostic')
