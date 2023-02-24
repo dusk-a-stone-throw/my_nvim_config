@@ -1,6 +1,6 @@
 local wilder = require('wilder')
 -- vim.cmd [[autocmd CmdlineEnter * ++once call wilder_init() | call wilder#main#start()]]
-function wilder_init()
+local function wilder_init()
     wilder.setup({ modes = { ':' } })
     wilder.set_option('pipeline', {
         wilder.branch(
@@ -24,21 +24,24 @@ function wilder_init()
             })
         ),
     })
-    wilder.set_option('renderer', wilder.popupmenu_renderer({
-        -- 'single', 'double', 'rounded' or 'solid'
-        -- can also be a list of 8 characters, see :h wilder#popupmenu_border_theme() for more details
-        highlighter = {
-            wilder.lua_pcre2_highlighter(), -- requires `luarocks install pcre2`
-            wilder.lua_fzy_highlighter(),
-        },
-        highlights = {
-            accent = wilder.make_hl('WilderAccent', 'Pmenu', { { a = 1 }, { a = 1 }, { foreground = '#29c9ff' } }),
-            border = 'rounded',
-        },
-        -- highlighter applies highlighting to the candidates
-        left = { ' ', wilder.popupmenu_devicons() },
-        right = { ' ', wilder.popupmenu_scrollbar() },
-    }))
+    wilder.set_option(
+        'renderer',
+        wilder.popupmenu_renderer({
+            -- 'single', 'double', 'rounded' or 'solid'
+            -- can also be a list of 8 characters, see :h wilder#popupmenu_border_theme() for more details
+            highlighter = {
+                wilder.lua_pcre2_highlighter(), -- requires `luarocks install pcre2`
+                wilder.lua_fzy_highlighter(),
+            },
+            highlights = {
+                accent = wilder.make_hl('WilderAccent', 'Pmenu', { { a = 1 }, { a = 1 }, { foreground = '#29c9ff' } }),
+                border = 'rounded',
+            },
+            -- highlighter applies highlighting to the candidates
+            left = { ' ', wilder.popupmenu_devicons() },
+            right = { ' ', wilder.popupmenu_scrollbar() },
+        })
+    )
 end
 
 wilder_init()
