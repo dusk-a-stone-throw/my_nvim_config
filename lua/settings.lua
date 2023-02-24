@@ -22,6 +22,8 @@ set.undofile = true
 set.ignorecase = true
 -- Enable mouse
 set.mouse = 'a'
+-- Keep cursor in the middle of the screen
+set.so = 999
 -- Show sign on the left side
 set.signcolumn = 'yes'
 -- Number of lines to keep above and below the cursor
