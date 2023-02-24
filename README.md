@@ -1,7 +1,10 @@
 # Vargoshi neovim config
 ![Preview](pics/preview.png)
+![Python code example](pics/python_code.png)
+![C++ code with dark+ theme](pics/cpp_code_with_vscode_theme.png)
+![Super minimalistic Word-like mode](pics/word-like_mode.png)
 ## Requirements
-[⏺nvim V8.0.1](https://github.com/neovim/neovim)
+[⏺nvim v0.8.3](https://github.com/neovim/neovim)
 
 [⏺nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 
@@ -84,6 +87,11 @@ map('n', '<C-Up>', ':MoveLine(-1)<CR>', { silent = true }) -- Move current line 
 ### Plugins config files
 LSP plugins configs located in `LSP_config`.  
 Other plugins configs located in `plugins_config`.
+### Word Office mode (BETA)
+To start "Word" mode, run `:WordModeEnable`,
+To disable run `:WordModeDisable`.  
+You can also center text in the middle of the screen, run `:WordModeCenter`.  
+**Warning**: if you want to center text at the same time with the word mode, run `:WordModeEnable` first, then `:WordModeCenter`. *(some highlight troubles)*
 ### Customization
 #### Dashboard
 You can change Dashboard start ascii-art, see [this collection](https://github.com/glepnir/dashboard-nvim/wiki/Ascii-Header-Text).  
