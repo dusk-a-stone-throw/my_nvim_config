@@ -18,6 +18,8 @@ require('plugins_config.dashboard')
 require('plugins_config.treesitter')
 -- Colored brackets
 require('plugins_config.ts-rainbow')
+-- Surround words, edit brackets etc.
+require('nvim-surround').setup()
 -- Nvim lsp completion
 require('LSP_config.mason-nvim')
 require('LSP_config.mason-lsp-config')
