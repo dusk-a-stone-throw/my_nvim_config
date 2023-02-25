@@ -2,6 +2,8 @@
 require('impatient')
 -- Floating term
 require('plugins_config.fterm')
+-- Code runner
+require('plugins_config.code_runner')
 -- Nvim-autopairs
 require('nvim-autopairs').setup()
 -- Nvim-colorizer.lua

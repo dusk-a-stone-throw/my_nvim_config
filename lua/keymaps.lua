@@ -23,11 +23,11 @@ map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 -- LSP renaming
 map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', { silent = true })
 -- Dashboard.nvim
-map('n', '<Leader>ff', ':Telescope find_files find_command=rg,--hidden,--files<CR>', { noremap = true, silent = true, })
-map('n', '<Leader>fh', ':Telescope oldfiles<CR>', { noremap = true, silent = true, })
-map('n', '<Leader>tc', ':Telescope colorscheme<CR>', { noremap = true, silent = true, })
-map('n', '<Leader>cn', ':DashboardNewFile<CR>', { noremap = true, silent = true, })
-map('n', '<Leader>fw', ':Telescope live_grep<CR>', { noremap = true, silent = true, })
+map('n', '<Leader>ff', ':Telescope find_files find_command=rg,--hidden,--files<CR>', { noremap = true, silent = true })
+map('n', '<Leader>fh', ':Telescope oldfiles<CR>', { noremap = true, silent = true })
+map('n', '<Leader>tc', ':Telescope colorscheme<CR>', { noremap = true, silent = true })
+map('n', '<Leader>cn', ':DashboardNewFile<CR>', { noremap = true, silent = true })
+map('n', '<Leader>fw', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 -- Folding
 map('n', '<C-f>', 'za', { noremap = true, silent = true })
 -- Disable matching highlight
@@ -37,6 +37,4 @@ map('n', '<Leader>tr', ':FTermToggle<CR>', { noremap = true, silent = true })
 -- Toggle nvim-tree
 map('n', '<Leader>fl', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 -- Run current opened python file
-map('n', '<F5>',
-    ':lua require\'fterm\'.exec("clear && " .. "time " .. "python3" .." " .. tostring(vim.api.nvim_buf_get_name(0))) vim.cmd [[startinsert]]<CR>'
-    , { noremap = true, silent = true })
+map('n', '<F5>', ':RunCode<CR>', { noremap = true, silent = true })

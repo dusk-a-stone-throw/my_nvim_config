@@ -30,6 +30,8 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Utility ========================
+        -- Code runner
+        use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
         -- Formatting
         use 'jose-elias-alvarez/null-ls.nvim'
         -- Automatically creates missing dirs when saving a file
