@@ -1,7 +1,11 @@
 # Vargoshi neovim config
+Main menu.
 ![Preview](pics/preview.png)
+Tokyonight is the default theme.
 ![Python code example](pics/python_code.png)
+Dark+ theme is preinstalled.
 ![C++ code with dark+ theme](pics/cpp_code_with_vscode_theme.png)
+"Word Office" mode.
 ![Super minimalistic Word-like mode](pics/word-like_mode.png)
 ## Requirements
 [⏺nvim v0.8.3](https://github.com/neovim/neovim)
@@ -15,6 +19,8 @@
 [⏺ripgrep](https://github.com/BurntSushi/ripgrep)
 
 [⏺FZF](https://github.com/junegunn/fzf)
+
+[⏺bat](https://github.com/sharkdp/bat)
 ## Starting up
 Backup your previous config:  
 ```shell
@@ -66,6 +72,10 @@ see [null-ls.nvim](https://github.com/jose-elias-alvarez/null-ls.nvim).
 **Python**, **C++** and **Lua** parsers will be installed at startup,
 to install other ones you may run `:TSInstall <NAME>`.  
 For configuration see `plugins_config/treesitter.lua`.
+### Coderunner
+**Java**, **Python**, **Typescript**, **Rust**, **C++** and **Bash** runners are preconfigurated,
+you can modify and add new runners, see `plugins_config/coderunner.lua`.  
+Also see [code_runner.nvim](https://github.com/CRAG666/code_runner.nvim) for more information.
 ### Theme
 Open `theme.lua` and change
 ```lua
