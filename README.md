@@ -50,18 +50,47 @@ After that run `:PackerInstall` to install necessary plugins.
 
 Run `:Mason` to install LSP servers you need.  
 For **Python** `pyright` is used by default (install it),
-for **Lua** default is `lua_ls` (***lua-language-server***),
+for **Lua** default is `lua_ls` (*lua-language-server*),
 for **Cpp** `clangd`.  
 To add a LSP server, you run `:Mason` and install all you need, then go to `LSP_config/nvim-cmp.lua` and add this to the end of file:  
 ```lua
 require('lspconfig')['YOUR_SERVER_NAME'].setup {
-  capabilities = capabilities
+  capabilities = capabilities,
 }
 ```
+<details>
+<summary>EXAMPLE INSTALLATION</summary>
+
+#### Let's install a LSP server for Go.
+1. Run `:MasonInstall gopls` (or run `:Mason` and choose manually).
+2. Open `LSP_config/nvim-cmp.lua` and add  
+```lua
+require('lspconfig')['gopls'].setup({
+    capabilities = capabilities,
+})
+```
+to the end of file.  
+*LSP autocompletion and linting are ready, but you better install a formatter and the Treesitter parser.*  
+3. Run `:MasonInstall gofumpt` to install the formatter (or any other you need). Don't forget to configure it, see [Formatting](#Formatting).  
+4. Install Treesitter parser: `:TSInstall go`.  
+5. Here you *go*!
+</details>
+
 See [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig), [configs](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md),
 [mason](https://github.com/williamboman/mason.nvim), and [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
-### Formatting
-**Python**, **C++** and **Lua** are preconfigurated.  
+### Snippets
+[LuaSnip](https://github.com/L3MON4D3/LuaSnip) is used.  
+#### Snippet collections
+I prefer [honza/vim-snippets](https://github.com/honza/vim-snippets/tree/master/snippets),
+but [rafamadriz/friendly-snippets](https://github.com/rafamadriz/friendly-snippets) is also preinstalled.  
+I don't use them both because they provide some several *equal snippets*, but if it doesn't bother you, you may use them both:  
+Open `LSP_config/nvim-cmp.lua` and uncomment this line:
+```lua
+require('luasnip.loaders.from_vscode').lazy_load()
+```
+For more info, see their docs.
+### Formatting <a name="Formatting"></a>
+**Python**, **C++** and **Lua** formatters are preconfigurated.  
 (For **Python** you need [`yapf`](https://github.com/google/yapf) installed, for **C++** you need
 [`clang-format`](https://clang.llvm.org/docs/ClangFormat.html),
 for **Lua** you need [`stylua`](https://github.com/JohnnyMorganz/StyLua)).  
@@ -74,7 +103,7 @@ to install other ones you may run `:TSInstall <NAME>`.
 For configuration see `plugins_config/treesitter.lua`.
 ### Coderunner
 **Java**, **Python**, **Typescript**, **Rust**, **C++** and **Bash** runners are preconfigurated,
-you can modify and add new runners, see `plugins_config/coderunner.lua`.  
+to modify and add new runners, see `plugins_config/coderunner.lua`.  
 Also see [code_runner.nvim](https://github.com/CRAG666/code_runner.nvim) for more information.
 ### Theme
 Open `theme.lua` and change
@@ -94,6 +123,17 @@ For example:
 ```lua
 map('n', '<C-Up>', ':MoveLine(-1)<CR>', { silent = true }) -- Move current line upwards
 ```
+### User commands
+Open `commands.lua` and add any command you need.  
+Syntax: 
+```lua
+vim.api.nvim_create_user_command({NAME}, {COMMAND}, {*OPTS})
+```
+Example:
+```lua
+vim.api.nvim_create_user_command('FTermToggle', 'lua require\'fterm\'.toggle()', {})
+```
+See [Offical docs](https://neovim.io/doc/user/api.html#nvim_create_user_command()) for help.
 ### Plugins config files
 LSP plugins configs located in `LSP_config`.  
 Other plugins configs located in `plugins_config`.
@@ -104,7 +144,7 @@ You can also center text in the middle of the screen, run `:WordModeCenter`.
 **Warning**: if you want to center text at the same time with the word mode, run `:WordModeEnable` first, then `:WordModeCenter`. *(some highlight troubles)*
 ### Customization
 #### Dashboard
-You can change Dashboard start ascii-art, see [this collection](https://github.com/glepnir/dashboard-nvim/wiki/Ascii-Header-Text).  
+You can change Dashboard start ASCII-art, see [this collection](https://github.com/glepnir/dashboard-nvim/wiki/Ascii-Header-Text).  
 Or make [your own header](https://xflea.github.io/nv-dashboard-header-maker/).  
 Great thanks to [glepnir](https://github.com/glepnir) and [xflea](https://github.com/xflea) for that.
 
