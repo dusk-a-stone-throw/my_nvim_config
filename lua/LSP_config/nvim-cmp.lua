@@ -33,6 +33,12 @@ local check_backspace = function()
     local col = vim.fn.col('.') - 1
     return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
 end
+
+-- Snippets from rafamadriz/friendly-snippets
+-- require('luasnip.loaders.from_vscode').lazy_load()
+
+-- Snippets from honza/vim-snippets (I prefer them)
+require('luasnip.loaders.from_snipmate').lazy_load()
 cmp.setup({
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },

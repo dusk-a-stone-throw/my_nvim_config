@@ -26,6 +26,9 @@ return require('packer').startup(function(use)
                 use 'romgrk/fzy-lua-native'
         -- Snippets
         use 'L3MON4D3/LuaSnip'
+            -- Snippet collection
+             use 'rafamadriz/friendly-snippets'
+             use 'honza/vim-snippets'
 
 
 
@@ -43,7 +46,7 @@ return require('packer').startup(function(use)
             'glepnir/dashboard-nvim',
         }
         -- Convert vim map to lua
-        use 'thugcee/nvim-map-to-lua'
+        use 'thugcee/nvim-map-to-lua' -- :ConvertMapToLua
         -- Multiple cursors
         use 'terryma/vim-multiple-cursors'
         -- Auto pairs
