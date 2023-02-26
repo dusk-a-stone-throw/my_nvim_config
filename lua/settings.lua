@@ -30,6 +30,8 @@ set.signcolumn = 'yes'
 set.scrolloff = 14
 -- Don't wrap lines
 set.wrap = false
+-- Don't show mode
+set.showmode = false
 -- For faster work
 set.cursorline = false
 set.cursorcolumn = false
