@@ -6,6 +6,8 @@ require('plugins_config.fterm')
 require('plugins_config.code_runner')
 -- Nvim-autopairs
 require('nvim-autopairs').setup()
+-- Highlight selected ranges
+require('range-highlight').setup({})
 -- Nvim-colorizer.lua
 require('colorizer').setup()
 -- Bufferline nvim

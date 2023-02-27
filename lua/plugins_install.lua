@@ -3,6 +3,9 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
     -- Optimiser (should be on the top)
     use 'lewis6991/impatient.nvim'
+
+
+
 -- ======================== Nvim LSP ======================== 
     -- LSP installer manager
     use 'williamboman/mason.nvim'
@@ -42,9 +45,7 @@ return require('packer').startup(function(use)
         -- Git integration
         use  'lewis6991/gitsigns.nvim'
         -- Start page
-        use {
-            'glepnir/dashboard-nvim',
-        }
+        use 'glepnir/dashboard-nvim'
         -- Convert vim map to lua
         use 'thugcee/nvim-map-to-lua' -- :ConvertMapToLua
         -- Multiple cursors
@@ -85,7 +86,8 @@ return require('packer').startup(function(use)
 
         -- Highlight entered ranges
         use 'winston0410/range-highlight.nvim'
-
+            -- Required
+             use 'winston0410/cmd-parser.nvim'
         -- Awesome highlighting
         use {
             'nvim-treesitter/nvim-treesitter',
@@ -95,9 +97,13 @@ return require('packer').startup(function(use)
                 ts_update()
             end,
         }
-        -- Rainbow brackets
-        use 'p00f/nvim-ts-rainbow'
 
+        -- Rainbow brackets
+        -- use 'p00f/nvim-ts-rainbow'
+        -- p00f/nvim-ts-rainbow is no longer maintained, I decided to use this fork:
+        use 'mrjones2014/nvim-ts-rainbow'
+        -- You may stay on p00f/nvim-ts-rainbow if you want
+        
         -- Awesome statusline
         use 'nvim-lualine/lualine.nvim'
 
@@ -118,6 +124,9 @@ return require('packer').startup(function(use)
         use 'tanvirtin/monokai.nvim'
         use 'shaunsingh/nord.nvim'
         use 'Mofiqul/dracula.nvim'
+
+
+
 -- ======================== Other stuff ======================== 
         -- Cheat sheet
         use 'sudormrfbin/cheatsheet.nvim'
