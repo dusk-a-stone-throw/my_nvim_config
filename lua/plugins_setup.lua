@@ -7,7 +7,9 @@ require('plugins_config.code_runner')
 -- Nvim-autopairs
 require('nvim-autopairs').setup()
 -- Highlight selected ranges
-require('range-highlight').setup({})
+require('range-highlight').setup()
+-- Highlight TODO FIXME etc. comments
+require('todo-comments').setup()
 -- Nvim-colorizer.lua
 require('colorizer').setup()
 -- Bufferline nvim
@@ -22,6 +24,8 @@ require('plugins_config.treesitter')
 require('plugins_config.ts-rainbow')
 -- Surround words, edit brackets etc.
 require('nvim-surround').setup()
+-- Fast comments
+require('Comment').setup()
 -- Nvim lsp completion
 require('LSP_config.mason-nvim')
 require('LSP_config.mason-lsp-config')

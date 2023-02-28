@@ -1,4 +1,5 @@
 return require('packer').startup(function(use)
+--                         2 Plugins
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- Optimiser (should be on the top)
@@ -7,6 +8,7 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Nvim LSP ======================== 
+--                         16 Plugins
     -- LSP installer manager
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
@@ -28,7 +30,13 @@ return require('packer').startup(function(use)
                 -- Required 
                 use 'romgrk/fzy-lua-native'
         -- Snippets
-        use 'L3MON4D3/LuaSnip'
+        use({
+            'L3MON4D3/LuaSnip',
+            -- follow latest release.
+            tag = 'v<CurrentMajor>.*',
+            -- install jsregexp (optional!:).
+            -- run = 'make install_jsregexp'
+        })
             -- Snippet collection
              use 'rafamadriz/friendly-snippets'
              use 'honza/vim-snippets'
@@ -36,6 +44,7 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Utility ========================
+--                          16 Plugins
         -- Code runner
         use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
         -- Formatting
@@ -43,19 +52,19 @@ return require('packer').startup(function(use)
         -- Automatically creates missing dirs when saving a file
         use 'jghauser/mkdir.nvim'
         -- Git integration
-        use  'lewis6991/gitsigns.nvim'
+        use 'lewis6991/gitsigns.nvim'
         -- Start page
         use 'glepnir/dashboard-nvim'
         -- Convert vim map to lua
         use 'thugcee/nvim-map-to-lua' -- :ConvertMapToLua
-        -- Multiple cursors
-        use 'terryma/vim-multiple-cursors'
         -- Auto pairs
         use 'windwp/nvim-autopairs'
         -- Get startup time
         use 'dstein64/vim-startuptime'
-        -- Fast comment
-        use 'tomtom/tcomment_vim'
+        -- Fast comments
+        use {
+            'numToStr/Comment.nvim',
+        }
         -- Float terminal
         use 'jiajiawang/fterm.nvim'
         -- Move lines
@@ -81,9 +90,14 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Appearance ========================
+--                          20 Plugins
+        -- Highlight TODO FIXME HACK WARN PERF NOTE TEST comments
+        use {
+            'folke/todo-comments.nvim',
+            requires = 'nvim-lua/plenary.nvim'
+        }
         -- Show css colors
         use 'norcalli/nvim-colorizer.lua'
-
         -- Highlight entered ranges
         use 'winston0410/range-highlight.nvim'
             -- Required
@@ -97,19 +111,15 @@ return require('packer').startup(function(use)
                 ts_update()
             end,
         }
-
         -- Rainbow brackets
         -- use 'p00f/nvim-ts-rainbow'
-        -- p00f/nvim-ts-rainbow is no longer maintained, I decided to use this fork:
-        use 'mrjones2014/nvim-ts-rainbow'
+        -- p00f/nvim-ts-rainbow is no longer maintained, I decided to use fork above:
         -- You may stay on p00f/nvim-ts-rainbow if you want
-        
+        use 'mrjones2014/nvim-ts-rainbow'
         -- Awesome statusline
         use 'nvim-lualine/lualine.nvim'
-
         -- Awesome bufferline
         use 'akinsho/bufferline.nvim'
-
         -- Icons
         use 'nvim-tree/nvim-web-devicons'
         -- Themes
@@ -128,6 +138,7 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Other stuff ======================== 
+--                          5 Plugins
         -- Cheat sheet
         use 'sudormrfbin/cheatsheet.nvim'
             -- Required
