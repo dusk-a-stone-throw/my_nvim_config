@@ -22,6 +22,12 @@ Dark+ theme is preinstalled.
 
 [⏺bat](https://github.com/sharkdp/bat)
 ## Starting up
+If you haven't installed packer.nvim yet, run this:  
+```shell
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+```
+**WARNING:** If you are trying to install this in **Termux on Android 12+**, see [this](https://github.com/dusk-a-stone-throw/my_nvim_config/wiki/Termux-installation).  
 Backup your previous config:  
 ```shell
 mkdir ~/nvim-backup
@@ -32,6 +38,7 @@ Clone the repo:
 cd ~/.config/nvim
 git clone https://github.com/dusk-a-stone-throw/my_nvim_config
 mv my_nvim_config/* ~/.config/nvim
+mv my_nvim_config/.* ~/.config/nvim # to move .git and .gitignore
 rm -rf my_nvim_config
 ```
 Run `nvim` and face some errors, but ignore them.  
