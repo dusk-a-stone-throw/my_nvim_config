@@ -36,5 +36,5 @@ map('n', '<Leader>nh', ':noh<CR>', { noremap = true, silent = true })
 map('n', '<Leader>tr', ':FTermToggle<CR>', { noremap = true, silent = true })
 -- Toggle nvim-tree
 map('n', '<Leader>fl', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
--- Run current opened python file
-map('n', '<F5>', ':RunCode<CR>', { noremap = true, silent = true })
+-- Run current opened python file, you maybe need :wa
+map('n', '<F5>', ':w | RunCode<CR>', { noremap = true, silent = true })
