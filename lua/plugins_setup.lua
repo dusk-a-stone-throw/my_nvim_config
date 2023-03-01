@@ -1,5 +1,3 @@
--- Optimiser
-require('impatient')
 -- Floating term
 require('plugins_config.fterm')
 -- Code runner
@@ -11,7 +9,8 @@ require('range-highlight').setup()
 -- Highlight TODO FIXME etc. comments
 require('todo-comments').setup()
 -- Nvim-colorizer.lua
-require('colorizer').setup()
+-- require('colorizer').setup()
+require('ccc').setup({ highlighter = { auto_enable = true } })
 -- Bufferline nvim
 require('plugins_config.bufferline')
 -- Lualine.nvim
@@ -20,6 +19,8 @@ require('plugins_config.lualine')
 require('plugins_config.dashboard')
 -- Awesome highlight
 require('plugins_config.treesitter')
+-- Highlight arguments' definitions and usages
+require('hlargs').setup()
 -- Colored brackets
 require('plugins_config.ts-rainbow')
 -- Surround words, edit brackets etc.

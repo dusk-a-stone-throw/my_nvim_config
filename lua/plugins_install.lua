@@ -40,6 +40,8 @@ return require('packer').startup(function(use)
             -- Snippet collection
              use 'rafamadriz/friendly-snippets'
              use 'honza/vim-snippets'
+        -- Watch LSP tags and symbols
+        use 'liuchengxu/vista.vim'
 
 
 
@@ -90,14 +92,14 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Appearance ========================
---                          20 Plugins
+--                          21 Plugins
         -- Highlight TODO FIXME HACK WARN PERF NOTE TEST comments
         use {
             'folke/todo-comments.nvim',
             requires = 'nvim-lua/plenary.nvim'
         }
-        -- Show css colors
-        use 'norcalli/nvim-colorizer.lua'
+        -- Show css colors, colorpicker
+        use 'uga-rosa/ccc.nvim'
         -- Highlight entered ranges
         use 'winston0410/range-highlight.nvim'
             -- Required
@@ -110,6 +112,11 @@ return require('packer').startup(function(use)
                 local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
                 ts_update()
             end,
+        }
+        -- Highlight arguments' definitions and usages
+        use {
+            'm-demare/hlargs.nvim',
+            requires = { 'nvim-treesitter/nvim-treesitter' }
         }
         -- Rainbow brackets
         -- use 'p00f/nvim-ts-rainbow'
