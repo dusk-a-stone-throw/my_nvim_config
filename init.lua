@@ -1,3 +1,4 @@
+require('impatient')
 require('plugins_install')
 require('settings')
 require('commands')
