@@ -1,5 +1,5 @@
-require('impatient')
 require('plugins_install')
+require('impatient')
 require('settings')
 require('commands')
 require('theme')
