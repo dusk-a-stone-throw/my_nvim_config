@@ -8,7 +8,7 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Nvim LSP ======================== 
---                         16 Plugins
+--                         17 Plugins
     -- LSP installer manager
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
@@ -41,12 +41,12 @@ return require('packer').startup(function(use)
              use 'rafamadriz/friendly-snippets'
              use 'honza/vim-snippets'
         -- Watch LSP tags and symbols
-        use 'liuchengxu/vista.vim'
+        use {'liuchengxu/vista.vim', opt = true, cmd = 'Vista'}
 
 
 
 -- ======================== Utility ========================
---                          16 Plugins
+--                          17 Plugins
         -- Code runner
         use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
         -- Formatting
@@ -81,6 +81,8 @@ return require('packer').startup(function(use)
             'nvim-telescope/telescope.nvim',
             requires = { {'nvim-lua/plenary.nvim'} }
         }
+        -- Pick symbols and insert them
+        use 'nvim-telescope/telescope-symbols.nvim'
         -- File explorer
         use 'kyazdani42/nvim-tree.lua'
         -- Markdown preview
