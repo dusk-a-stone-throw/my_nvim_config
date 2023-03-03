@@ -8,19 +8,19 @@ Dark+ theme is preinstalled.
 "Word Office" mode.
 ![Super minimalistic Word-like mode](pics/word-like_mode.png)
 ## Requirements
-[⏺nvim v0.8.3](https://github.com/neovim/neovim)
+[:white_check_mark: nvim v0.8.3](https://github.com/neovim/neovim)
 
-[⏺nerd fonts](https://github.com/ryanoasis/nerd-fonts)
+[:white_check_mark: nerd fonts](https://github.com/ryanoasis/nerd-fonts)
 
-[⏺packer.nvim](https://github.com/wbthomason/packer.nvim)
+[:white_check_mark: packer.nvim](https://github.com/wbthomason/packer.nvim)
 
-[⏺pynvim](https://github.com/neovim/pynvim)
+[:white_check_mark: pynvim](https://github.com/neovim/pynvim)
 
-[⏺ripgrep](https://github.com/BurntSushi/ripgrep)
+[:white_check_mark: ripgrep](https://github.com/BurntSushi/ripgrep)
 
-[⏺FZF](https://github.com/junegunn/fzf)
+[:white_check_mark: FZF](https://github.com/junegunn/fzf)
 
-[⏺bat](https://github.com/sharkdp/bat)
+[:white_check_mark: bat](https://github.com/sharkdp/bat)
 ## Starting up
 If you haven't installed packer.nvim yet, run this:  
 ```shell
@@ -33,13 +33,14 @@ Backup your previous config:
 mkdir ~/nvim-backup
 mv ~/.config/nvim/* ~/nvim-backup
 ```
+If you have hidden files inside, also run:
+```shell
+mv ~/.config/nvim/.* ~/nvim-backup
+```
 Clone the repo:  
 ```shell
 cd ~/.config/nvim
-git clone https://github.com/dusk-a-stone-throw/my_nvim_config
-mv my_nvim_config/* ~/.config/nvim
-mv my_nvim_config/.* ~/.config/nvim # to move .git and .gitignore
-rm -rf my_nvim_config
+git clone https://github.com/dusk-a-stone-throw/my_nvim_config .
 ```
 Run `nvim` and face some errors, but ignore them.  
 After that run `:PackerInstall` to install necessary plugins.
