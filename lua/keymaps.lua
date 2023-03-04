@@ -26,7 +26,7 @@ map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', { silent = true })
 map('n', '<Leader>ff', ':Telescope find_files find_command=rg,--hidden,--files<CR>', { noremap = true, silent = true })
 map('n', '<Leader>fh', ':Telescope oldfiles<CR>', { noremap = true, silent = true })
 map('n', '<Leader>tc', ':Telescope colorscheme<CR>', { noremap = true, silent = true })
-map('n', '<Leader>cn', ':DashboardNewFile<CR>', { noremap = true, silent = true })
+map('n', '<Leader>cn', ':enew<CR>', { noremap = true, silent = true })
 map('n', '<Leader>fw', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 -- Folding
 map('n', '<C-f>', 'za', { noremap = true, silent = true })
@@ -38,3 +38,8 @@ map('n', '<Leader>tr', ':FTermToggle<CR>', { noremap = true, silent = true })
 map('n', '<Leader>fl', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 -- Run current opened python file, you maybe need :wa
 map('n', '<F5>', ':w | RunCode<CR>', { noremap = true, silent = true })
+-- For real Souls of Cinder
+-- map('n', '<Left>', ':echoe "Use h"<CR>', { noremap = true })
+-- map('n', '<Right>', ':echoe "Use l"<CR>', { noremap = true })
+-- map('n', '<Up>', ':echoe "Use k"<CR>', { noremap = true })
+-- map('n', '<Down>', ':echoe "Use j"<CR>', { noremap = true })

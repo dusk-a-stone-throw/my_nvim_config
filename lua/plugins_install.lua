@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
         -- Start page
         use 'glepnir/dashboard-nvim'
         -- Convert vim map to lua
-        use 'thugcee/nvim-map-to-lua' -- :ConvertMapToLua
+        use {'thugcee/nvim-map-to-lua', opt = true , cmd = {'ConvertMapToLua'}}
         -- Auto pairs
         use 'windwp/nvim-autopairs'
         -- Get startup time
@@ -84,7 +84,7 @@ return require('packer').startup(function(use)
         -- Pick symbols and insert them
         use 'nvim-telescope/telescope-symbols.nvim'
         -- File explorer
-        use 'kyazdani42/nvim-tree.lua'
+        use 'nvim-tree/nvim-tree.lua'
         -- Markdown preview
         use({
             'iamcco/markdown-preview.nvim',
@@ -94,14 +94,14 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Appearance ========================
---                          21 Plugins
+--                          19 Plugins
         -- Highlight TODO FIXME HACK WARN PERF NOTE TEST comments
         use {
             'folke/todo-comments.nvim',
             requires = 'nvim-lua/plenary.nvim'
         }
         -- Show css colors, colorpicker
-        use 'uga-rosa/ccc.nvim'
+        use {'uga-rosa/ccc.nvim', opt=true, cmd = {'CccConvert', 'CccPick', 'CccHighlighterEnable','CccHighlighterToggle','CccHighlighterDisable'}}
         -- Highlight entered ranges
         use 'winston0410/range-highlight.nvim'
             -- Required
@@ -136,8 +136,6 @@ return require('packer').startup(function(use)
         use 'folke/tokyonight.nvim'
         use 'marko-cerovac/material.nvim'
         use 'rafamadriz/neon'
-        use 'tjdevries/colorbuddy.vim'
-        use 'Th3Whit3Wolf/onebuddy'
         use 'projekt0n/github-nvim-theme'
         use 'Mofiqul/vscode.nvim'
         use 'tanvirtin/monokai.nvim'
@@ -149,12 +147,10 @@ return require('packer').startup(function(use)
 -- ======================== Other stuff ======================== 
 --                          5 Plugins
         -- Cheat sheet
-        use 'sudormrfbin/cheatsheet.nvim'
-            -- Required
-            use 'nvim-lua/popup.nvim'
+        use {'sudormrfbin/cheatsheet.nvim', requires={'nvim-lua/popup.nvim'}, opt=true, cmd ={'Cheatsheet','CheatsheetEdit'}}
         -- LOL
-            use 'seandewar/nvimesweeper' -- :Nvimesweeper, :lua math.randomseed(os.time())
-            use 'alec-gibson/nvim-tetris' -- :Tetris
-            use 'ThePrimeagen/vim-be-good'
+            use {'seandewar/nvimesweeper', opt = true, cmd = 'Nvimesweeper'} -- :lua math.randomseed(os.time())
+            use {'alec-gibson/nvim-tetris',opt = true, cmd = {'Tetris'}}
+            use {'ThePrimeagen/vim-be-good',opt = true,cmd={'VimBeGood'}}
 
 end)
