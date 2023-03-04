@@ -8,9 +8,6 @@ require('nvim-autopairs').setup()
 require('range-highlight').setup()
 -- Highlight TODO FIXME etc. comments
 require('todo-comments').setup()
--- Nvim-colorizer.lua
--- require('colorizer').setup()
-require('ccc').setup({ highlighter = { auto_enable = true } })
 -- Bufferline nvim
 require('plugins_config.bufferline')
 -- Lualine.nvim
