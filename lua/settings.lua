@@ -47,6 +47,8 @@ set.undofile = true
 -- Ignore case in search
 set.ignorecase = true
 -- Enable mouse
+set.mouse = 'a'
+-- For true vimers:
 set.mouse = ''
 -- Keep cursor in the middle of the screen
 set.so = 999
