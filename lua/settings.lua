@@ -1,3 +1,29 @@
+-- Disable default plugins
+local disabled_built_ins = {
+    'netrw',
+    'netrwPlugin',
+    'netrwSettings',
+    'netrwFileHandlers',
+    'gzip',
+    'zip',
+    'zipPlugin',
+    'tar',
+    'tarPlugin',
+    'getscript',
+    'getscriptPlugin',
+    'vimball',
+    'vimballPlugin',
+    '2html_plugin',
+    'logipat',
+    'rrhelper',
+    'spellfile_plugin',
+    'matchit',
+}
+
+for _, plugin in pairs(disabled_built_ins) do
+    vim.g['loaded_' .. plugin] = 1
+end
+
 local g = vim.g
 local set = vim.opt
 local api = vim.api
@@ -21,7 +47,7 @@ set.undofile = true
 -- Ignore case in search
 set.ignorecase = true
 -- Enable mouse
-set.mouse = 'a'
+set.mouse = ''
 -- Keep cursor in the middle of the screen
 set.so = 999
 -- Show sign on the left side
@@ -56,4 +82,5 @@ set.hidden = true
 set.autoread = true
 -- Don't need for ruler use statusline instead
 set.ruler = false
-api.nvim_command('call wilder#enable_cmdline_enter()')
+-- Speed up by not to drawing the screen
+set.lazyredraw = true
