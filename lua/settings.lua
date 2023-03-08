@@ -54,8 +54,6 @@ set.mouse = 'a'
 set.so = 999
 -- Show sign on the left side
 set.signcolumn = 'yes'
--- Number of lines to keep above and below the cursor
-set.scrolloff = 14
 -- Don't wrap lines
 set.wrap = false
 -- Don't show mode
