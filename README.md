@@ -10,7 +10,9 @@ Dark+ theme is preinstalled.
 ## Requirements
 [:white_check_mark: nvim v0.8.3](https://github.com/neovim/neovim)
 
-[:white_check_mark: nerd fonts](https://github.com/ryanoasis/nerd-fonts)
+[:white_check_mark: git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+[:white_check_mark: nerd fonts](https://github.com/ryanoasis/nerd-fonts#option-3-install-script)
 
 [:white_check_mark: packer.nvim](https://github.com/wbthomason/packer.nvim)
 
@@ -18,10 +20,15 @@ Dark+ theme is preinstalled.
 
 [:white_check_mark: ripgrep](https://github.com/BurntSushi/ripgrep)
 
-[:white_check_mark: FZF](https://github.com/junegunn/fzf)
+[:white_check_mark: fzf](https://github.com/junegunn/fzf)
 
 [:white_check_mark: bat](https://github.com/sharkdp/bat)
+
+[:white_check_mark: lua](https://lua.org)
 ## Starting up
+### Linux & termux installation
+*Termux installation tested on Android 11 Realme 6 Pro.*  
+
 If you haven't installed packer.nvim yet, run this:  
 ```shell
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -39,12 +46,16 @@ mv ~/.config/nvim/.* ~/nvim-backup
 ```
 Clone the repo:  
 ```shell
-cd ~/.config/nvim
-git clone https://github.com/dusk-a-stone-throw/my_nvim_config .
+git clone https://github.com/dusk-a-stone-throw/my_nvim_config ~/.config/nvim
 ```
 Run `nvim` and face some errors, but ignore them.  
-After that run `:PackerInstall` to install necessary plugins.
-## Used plugins
+After that run `:PackerSync` to install necessary plugins and compile packer loader file for lazy load.  
+*Remark: you probably will see **nvim-ts-rainbow** installation error, don't think about it. This plugin will be installed anyway.*  
+
+After that restart `nvim` and setup LSP servers, themes, formatters etc.
+### Windows installation
+See [this page](https://github.com/dusk-a-stone-throw/my_nvim_config/wiki/Windows-installation).
+## Main used plugins
 [packer.nvim](https://github.com/wbthomason/packer.nvim) — Awesome plugin manager  
 [mason.nvim](https://github.com/williamboman/mason.nvim) — Nvim package manager for LSP servers, linters, formatters etc.  
 [nvim-cmp](https://github.com/rsh7th/nvim-cmp) — LSP autocompletion  
