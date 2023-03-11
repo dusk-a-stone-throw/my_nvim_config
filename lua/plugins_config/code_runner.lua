@@ -7,6 +7,7 @@ require('code_runner').setup({
         typescript = 'time deno run',
         rust = 'cd $dir && time rustc $fileName && $dir/$fileNameWithoutExt',
         cpp = 'make && time make run',
-        sh = 'bash',
+        sh = 'time bash',
+        lua = 'time lua',
     },
 })
