@@ -38,7 +38,5 @@ require('plugins_config.gitsigns')
 require('mkdir')
 -- File explorer
 require('plugins_config.nvim-tree')
--- Wild menu autocomplete
-require('plugins_config.wilder-nvim')
 -- Fuzzy finder
 require('plugins_config.telescope')

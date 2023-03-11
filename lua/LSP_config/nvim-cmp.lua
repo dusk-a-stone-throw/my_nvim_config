@@ -41,6 +41,7 @@ end
 require('luasnip.loaders.from_snipmate').lazy_load()
 cmp.setup({
     sources = cmp.config.sources({
+        { name = 'git' },
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'path', group_index = 2 },
@@ -55,9 +56,6 @@ cmp.setup({
     window = {
         documentation = cmp.config.window.bordered(),
     },
-    -- documentation = {
-    --   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
-    -- },
     completion = {
         keyword_length = 1,
     },
@@ -83,7 +81,7 @@ cmp.setup({
             else
                 fallback()
             end
-        end, { 'i', 's' }),
+        end, { 'i', 's', 'c' }),
         ['<S-Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
                 cmp.select_prev_item()
@@ -92,31 +90,36 @@ cmp.setup({
             else
                 fallback()
             end
-        end, { 'i', 's' }),
+        end, { 'i', 's', 'c' }),
     }),
 })
 
+-- Git source for hrsh7th/nvim-cmp
+require('cmp_git').setup()
 -- Set configuration for specific filetype.
 cmp.setup.filetype('gitcommit', {
     sources = cmp.config.sources({
         { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-    }, {
-        { name = 'buffer' },
     }),
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
--- cmp.setup.cmdline(':', {
---   sources = cmp.config.sources({
---     { name = 'path' }
---   }, {
---     { name = 'cmdline' }
---   })
--- })
+cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+        { name = 'path' },
+    }, {
+        { name = 'cmdline' },
+    }),
+})
 
--- Setup lspconfig.
+-- Setup lspconfig
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+
+-- require('lspconfig')['<YOUR_LSP_SERVER>'].setup({
+--     capabilities = capabilities,
+-- })
+
 require('lspconfig')['lua_ls'].setup({
     capabilities = capabilities,
 })
