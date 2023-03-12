@@ -37,7 +37,13 @@ map('n', '<Leader>tr', ':FTermToggle<CR>', { noremap = true, silent = true })
 -- Toggle nvim-tree
 map('n', '<Leader>fl', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 -- Run current opened python file, you maybe need :wa
-map('n', '<F5>', ':execute \':lua vim.lsp.buf.format()\' | w | RunCode<CR>', { noremap = true, silent = true })
+-- WARN: sometimes vim.lsp.buf.format() falls due to timeout, so I had to increase timeout_ms (default is 1000)
+map(
+    'n',
+    '<F5>',
+    ':execute \':lua vim.lsp.buf.format({timeout_ms=5000})\' | w | RunCode<CR>',
+    { noremap = true, silent = true }
+)
 -- For real Souls of Cinder
 -- map('n', '<Left>', ':echoe "Use h"<CR>', { noremap = true })
 -- map('n', '<Right>', ':echoe "Use l"<CR>', { noremap = true })
