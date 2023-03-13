@@ -45,7 +45,7 @@ map(
     { noremap = true, silent = true }
 )
 -- For real Souls of Cinder
--- map('n', '<Left>', ':echoe "Use h"<CR>', { noremap = true })
--- map('n', '<Right>', ':echoe "Use l"<CR>', { noremap = true })
--- map('n', '<Up>', ':echoe "Use k"<CR>', { noremap = true })
--- map('n', '<Down>', ':echoe "Use j"<CR>', { noremap = true })
+map('n', '<Left>', ':echoe "Use h"<CR>', { noremap = true })
+map('n', '<Right>', ':echoe "Use l"<CR>', { noremap = true })
+map('n', '<Up>', ':echoe "Use k"<CR>', { noremap = true })
+map('n', '<Down>', ':echoe "Use j"<CR>', { noremap = true })
