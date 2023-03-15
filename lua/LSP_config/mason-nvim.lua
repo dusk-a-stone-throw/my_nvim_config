@@ -1,13 +1,12 @@
-require("mason").setup({
+require('mason').setup({
     ui = {
         icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
+            package_installed = '✔️',
+            package_pending = '➡️',
+            package_uninstalled = '✗',
+        },
     },
     pip = {
         upgrade_pip = true,
-    }
+    },
 })
-
