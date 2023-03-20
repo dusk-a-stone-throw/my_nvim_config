@@ -1,3 +1,18 @@
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+local packer_bootstrap = ensure_packer()
+if (string.match(os.getenv('HOME'),'.*com%.termux.*')) then
+    require('packer').init({max_jobs=30,})
+end
+
 return require('packer').startup(function(use)
 --                         2 Plugins
     -- Packer can manage itself
@@ -147,5 +162,8 @@ return require('packer').startup(function(use)
             use {'seandewar/nvimesweeper', opt = true, cmd = 'Nvimesweeper'} -- :lua math.randomseed(os.time())
             use {'alec-gibson/nvim-tetris',opt = true, cmd = {'Tetris'}}
             use {'ThePrimeagen/vim-be-good',opt = true,cmd={'VimBeGood'}}
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 
 end)
