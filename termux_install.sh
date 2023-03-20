@@ -43,7 +43,7 @@ if [ "$install_lua" == "n" ] || [ "$install_lua" == "N" ]
 then
     :
 else 
-    echo -e "${CYAN}Installing lua-language-server...${NC}"
+    echo -e "${CYAN}Installing lua-language-server and stylua...${NC}"
     pkg install lua-language-server stylua
     clear
 fi
