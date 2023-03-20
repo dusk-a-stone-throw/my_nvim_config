@@ -26,9 +26,13 @@ Dark+ theme is preinstalled.
 
 [:white_check_mark: lua](https://lua.org)
 ## Starting up
-### Linux & termux installation
-*Termux installation tested on Android 11 Realme 6 Pro.*  
-
+### Termux installation
+**WARNING:** IT'S A BETA FUNCTIONAL. USE IT AT YOUR OWN RISK.  
+Run:
+```shell
+bash -c "$(curl -s https://raw.githubusercontent.com/dusk-a-stone-throw/my_nvim_config/master/termux_install.sh)"
+````
+### Linux installation (can also use on Termux)
 If you haven't installed packer.nvim yet, run this:  
 ```shell
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
