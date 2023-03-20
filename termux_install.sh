@@ -38,13 +38,13 @@ echo -e "${CYAN}Installing clangd and clang-format...${NC}"
     clear
 fi
 
-read -p $'\e[0;36mInstall lua-language-server for Lua autocomplete? (y/n default: y): \e[0m' install_lua
+read -p $'\e[0;36mInstall lua-language-server and stylua for Lua autocomplete and formatting? (y/n default: y): \e[0m' install_lua
 if [ "$install_lua" == "n" ] || [ "$install_lua" == "N" ]
 then
     :
 else 
     echo -e "${CYAN}Installing lua-language-server...${NC}"
-    pkg install lua-language-server
+    pkg install lua-language-server stylua
     clear
 fi
 
@@ -88,7 +88,7 @@ nvim -e -c "autocmd User PackerCompileDone qa" -c "PackerSync" > ~/tmp.txt 2>&1
 rm ~/tmp.txt ~/tmp_grep.txt
 
 echo -e "${CYAN}Setting up LSP servers, formatters and highlighters...${NC}"
-nvim -c "MasonInstall stylua pyright yapf"
+nvim -c "MasonInstall pyright yapf"
 
 echo -e "${CYAN}Now you can run neovim by typing: nvim${NC}"
 echo -e "${CYAN}Have a good time!${NC}"
