@@ -1,6 +1,7 @@
 -- 'n' — Normal mode
 -- 'v' — Visual mode
 -- 'i' — Insert mode
+
 local function map(mode, lhs, rhs, opts)
     local options = { noremap = true }
     if opts then
@@ -36,7 +37,11 @@ map('n', '<Leader>nh', ':noh<CR>', { noremap = true, silent = true })
 map('n', '<Leader>tr', ':FTermToggle<CR>', { noremap = true, silent = true })
 -- Toggle nvim-tree
 map('n', '<Leader>fl', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
--- Run current opened python file, you maybe need :wa
+-- Paste digraphs
+map('i', '<C-k><C-k>', '<Cmd>lua require\'better-digraphs\'.digraphs("insert")<CR>', { noremap = true })
+map('n', 'r<C-k><C-k>', '<Cmd>lua require\'better-digraphs\'.digraphs("normal")<CR>', { noremap = true })
+map('v', 'r<C-k><C-k>', '<ESC><Cmd>lua require\'better-digraphs\'.digraphs("visual")<CR>', { noremap = true })
+-- Run current opened file, you maybe need :wa
 -- WARN: sometimes vim.lsp.buf.format() falls due to timeout, so I had to increase timeout_ms (default is 1000)
 map(
     'n',
