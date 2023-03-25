@@ -1,3 +1,4 @@
+-- Auto install packer.nvim if it's not istalled, then run PackerSync (See the end of file)
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -9,12 +10,14 @@ local ensure_packer = function()
   return false
 end
 local packer_bootstrap = ensure_packer()
+
+-- On Android 12+, only 32 shadow processes are allowed, so I had to limit them.
 if (string.match(os.getenv('HOME'),'.*com%.termux.*')) then
     require('packer').init({max_jobs=30,})
 end
 
 return require('packer').startup(function(use)
---                         2 Plugins
+
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     -- Optimiser (should be on the top)
@@ -23,7 +26,6 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Nvim LSP ======================== 
---                         17 Plugins
     -- LSP installer manager
     use 'williamboman/mason.nvim'
     use 'williamboman/mason-lspconfig.nvim'
@@ -37,6 +39,8 @@ return require('packer').startup(function(use)
             use 'saadparwaiz1/cmp_luasnip'
             use 'hrsh7th/cmp-nvim-lua'
             use 'petertriho/cmp-git'
+                -- Show function signature
+                use 'ray-x/lsp_signature.nvim'
                 -- Better sorting
                 use 'lukas-reineke/cmp-under-comparator'
         -- Snippets
@@ -54,9 +58,7 @@ return require('packer').startup(function(use)
         use {'liuchengxu/vista.vim', opt = true, cmd = 'Vista'}
 
 
-
 -- ======================== Utility ========================
---                          17 Plugins
         -- Code runner
         use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
         -- Formatting
@@ -67,16 +69,23 @@ return require('packer').startup(function(use)
         use 'lewis6991/gitsigns.nvim'
         -- Start page
         use 'glepnir/dashboard-nvim'
+        -- Toggle any symbol at the end of line
+        use 'saifulapm/chartoggle.nvim'
+        -- Better undo history
+        use {
+            'kevinhwang91/nvim-fundo', requires = 'kevinhwang91/promise-async',
+            run = function() require('fundo').install() end
+        }
         -- Convert vim map to lua
         use {'thugcee/nvim-map-to-lua', opt = true , cmd = {'ConvertMapToLua'}}
         -- Auto pairs
         use 'windwp/nvim-autopairs'
+        -- Paste digraphs
+        use 'protex/better-digraphs.nvim'
         -- Get startup time
         use 'dstein64/vim-startuptime'
         -- Fast comments
-        use {
-            'numToStr/Comment.nvim',
-        }
+        use 'numToStr/Comment.nvim'
         -- Float terminal
         use 'jiajiawang/fterm.nvim'
         -- Move lines
@@ -104,7 +113,6 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Appearance ========================
---                          19 Plugins
         -- Highlight TODO FIXME HACK WARN PERF NOTE TEST comments
         use {
             'folke/todo-comments.nvim',
@@ -155,7 +163,6 @@ return require('packer').startup(function(use)
 
 
 -- ======================== Other stuff ======================== 
---                          5 Plugins
         -- Cheat sheet
         use {'sudormrfbin/cheatsheet.nvim', requires={'nvim-lua/popup.nvim'}, opt=true, cmd ={'Cheatsheet','CheatsheetEdit'}}
         -- LOL
