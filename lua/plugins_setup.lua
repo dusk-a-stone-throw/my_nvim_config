@@ -16,6 +16,10 @@ require('plugins_config.lualine')
 require('plugins_config.dashboard')
 -- Awesome highlight
 require('plugins_config.treesitter')
+-- Add any symbol at the end of line
+require('plugins_config.chartoggle')
+-- Better undo history
+require('fundo').setup()
 -- Highlight arguments' definitions and usages
 require('hlargs').setup()
 -- Colored brackets
