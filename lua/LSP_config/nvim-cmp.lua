@@ -1,6 +1,6 @@
--- Setup nvim-cmp.
-
+-- TODO: add autoselection for required signature of an overloaded function
 local cmp = require('cmp')
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local luasnip = require('luasnip')
 local kind_icons = {
     Text = '',
@@ -29,16 +29,25 @@ local kind_icons = {
     Operator = '',
     TypeParameter = '',
 }
-local check_backspace = function()
-    local col = vim.fn.col('.') - 1
-    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s')
-end
 
 -- Snippets from rafamadriz/friendly-snippets
 -- require('luasnip.loaders.from_vscode').lazy_load()
 
 -- Snippets from honza/vim-snippets (I prefer them)
 require('luasnip.loaders.from_snipmate').lazy_load()
+
+-- Show function/method signature when typing
+require('lsp_signature').setup({
+    hint_prefix = '',
+    hint_enable = false,
+    close_timeout = 0,
+    -- Select next signature if function is overloaded
+    select_signature_key = '<C-s>',
+})
+
+-- Insert `(` after select function or method item
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
+
 cmp.setup({
     sources = cmp.config.sources({
         { name = 'git' },
@@ -71,7 +80,7 @@ cmp.setup({
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
+            select = false,
         }),
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
@@ -123,7 +132,27 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 require('lspconfig')['lua_ls'].setup({
     capabilities = capabilities,
 })
-require('lspconfig').pylsp.setup({})
+require('lspconfig').pylsp.setup({
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    -- Ignore some unneccesary errors (e.g. line length, spaces etc.)
+                    ignore = { 'W293', 'W391', 'W504', 'E225', 'E501', 'E226', 'E302' },
+                },
+                autopep8 = {
+                    enabled = false,
+                },
+                yapf = {
+                    enabled = false,
+                },
+                mypy = {
+                    enabled = true,
+                },
+            },
+        },
+    },
+})
 require('lspconfig')['clangd'].setup({
     capabilities = capabilities,
 })
