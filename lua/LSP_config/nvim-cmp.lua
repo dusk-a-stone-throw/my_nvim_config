@@ -146,7 +146,7 @@ require('lspconfig').pylsp.setup({
                 yapf = {
                     enabled = false,
                 },
-                mypy = {
+                rope_autoimport = {
                     enabled = true,
                 },
             },

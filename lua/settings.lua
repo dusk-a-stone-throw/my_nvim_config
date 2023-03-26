@@ -80,3 +80,4 @@ set.autoread = true
 set.ruler = false
 -- Speed up by not to drawing the screen
 set.lazyredraw = true
+-- Maximum number of items to show in the popup menu
