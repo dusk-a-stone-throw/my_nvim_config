@@ -40,7 +40,7 @@ require('luasnip.loaders.from_snipmate').lazy_load()
 require('lsp_signature').setup({
     hint_prefix = '',
     hint_enable = false,
-    close_timeout = 0,
+    close_timeout = 1000,
     -- Select next signature if function is overloaded
     select_signature_key = '<C-s>',
 })
@@ -132,27 +132,9 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protoc
 require('lspconfig')['lua_ls'].setup({
     capabilities = capabilities,
 })
-require('lspconfig').pylsp.setup({
-    settings = {
-        pylsp = {
-            plugins = {
-                pycodestyle = {
-                    -- Ignore some unneccesary errors (e.g. line length, spaces etc.)
-                    ignore = { 'W293', 'W391', 'W504', 'E225', 'E501', 'E226', 'E302' },
-                },
-                autopep8 = {
-                    enabled = false,
-                },
-                yapf = {
-                    enabled = false,
-                },
-                rope_autoimport = {
-                    enabled = true,
-                },
-            },
-        },
-    },
-})
 require('lspconfig')['clangd'].setup({
+    capabilities = capabilities,
+})
+require('lspconfig')['pyright'].setup({
     capabilities = capabilities,
 })
