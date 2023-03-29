@@ -1,10 +1,8 @@
 local g = vim.g
 local c = require('vscode.colors')
 
-
-
 -- One dark theme
-require('onedark').setup {
+require('onedark').setup({
     style = 'darker',
     transparent = false,
     code_style = {
@@ -12,19 +10,16 @@ require('onedark').setup {
         keywords = 'none',
         functions = 'none',
         strings = 'none',
-        variables = 'none'
+        variables = 'none',
     },
     highlights = {
         String = { fg = '#de9623', fmt = 'none' },
         Comment = { fg = '#48b84d', fmt = 'none' },
-        PunctBracket = { fg = '#000000', bg = '#Ac3146' }
+        PunctBracket = { fg = '#000000', bg = '#Ac3146' },
     },
     -- toggle_style_key = '<leader>ts', -- Default keybinding to toggle
     toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' },
-
-}
-
-
+})
 
 -- Tokyo night
 require('tokyonight').setup({
@@ -49,11 +44,10 @@ require('tokyonight').setup({
     on_highlights = function(hl, c)
         hl.MatchParen = {
             bg = '#454443',
-            bold = false
+            bold = false,
         }
     end,
 })
-
 
 -- Github-nvim-theme (light)
 require('github-theme').setup({
@@ -63,8 +57,6 @@ require('github-theme').setup({
     sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' },
 })
 
-
-
 -- VScode theme
 require('vscode').setup({
     -- Enable transparent background
@@ -73,10 +65,8 @@ require('vscode').setup({
         -- this supports the same val table as vim.api.nvim_set_hl
         -- use colors from this colorscheme by requiring vscode.colors!
         BufferLineBufferSelected = { italic = false },
-    }
+    },
 })
 
-
-
 -- ========== Setup ==========
-vim.cmd [[ colorscheme tokyonight-night]]
+vim.cmd([[ colorscheme tokyonight-night]])
