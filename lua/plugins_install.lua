@@ -55,7 +55,7 @@ return require('packer').startup(function(use)
              use 'rafamadriz/friendly-snippets'
              use 'honza/vim-snippets'
         -- Watch LSP tags and symbols
-        use {'liuchengxu/vista.vim', opt = true, cmd = 'Vista'}
+        use 'simrat39/symbols-outline.nvim'
 
 
 -- ======================== Utility ========================

@@ -44,3 +44,5 @@ require('mkdir')
 require('plugins_config.nvim-tree')
 -- Fuzzy finder
 require('plugins_config.telescope')
+-- Show LSP symbols and tags
+require('plugins_config.symbols-outline')
