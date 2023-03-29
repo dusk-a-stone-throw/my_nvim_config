@@ -26,44 +26,49 @@ db.setup({
             enable = false,
         },
         center = {
-            { icon = '  ',
+            {
+                icon = '  ',
                 desc = 'New file                                ',
                 action = 'enew',
                 icon_hl = 'Statement',
                 desc_hl = 'Statement',
             },
-            { icon = '  ',
+            {
+                icon = '  ',
                 desc = 'Recently opened files                   ',
                 action = 'Telescope oldfiles',
                 icon_hl = 'Statement',
                 desc_hl = 'Statement',
             },
-            { icon = '  ',
+            {
+                icon = '  ',
                 desc = 'Find  File                              ',
                 action = 'Telescope find_files find_command=rg,--hidden,--files',
                 icon_hl = 'Statement',
                 desc_hl = 'Statement',
             },
-            { icon = '  ',
+            {
+                icon = '  ',
                 desc = 'Find  word                              ',
                 action = 'Telescope live_grep',
                 icon_hl = 'Statement',
                 desc_hl = 'Statement',
             },
-            { icon = '  ',
+            {
+                icon = '  ',
                 desc = 'Change colorscheme                      ',
                 action = 'Telescope colorscheme',
                 icon_hl = 'Statement',
                 desc_hl = 'Statement',
             },
-            { icon = 'ﰸ  ',
+            {
+                icon = '󰜺  ',
                 desc = 'Exit                                    ',
                 action = 'qa',
                 icon_hl = 'Statement',
                 desc_hl = 'Statement',
             },
-
         },
-        footer = { 'By Vargoshi' }
+        footer = { 'By Vargoshi' },
     },
 })
