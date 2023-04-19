@@ -1,13 +1,13 @@
 -- Auto install packer.nvim if it's not istalled, then run PackerSync (See the end of file)
 local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
+    local fn = vim.fn
+    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+    if fn.empty(fn.glob(install_path)) > 0 then
+        fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+        vim.cmd [[packadd packer.nvim]]
     return true
-  end
-  return false
+    end
+    return false
 end
 local packer_bootstrap = ensure_packer()
 
@@ -124,6 +124,8 @@ return require('packer').startup(function(use)
         use 'winston0410/range-highlight.nvim'
             -- Required
              use 'winston0410/cmd-parser.nvim'
+        -- Highlight other uses of the word under the cursor using either LSP, Tree-sitter, or regex matching
+        use 'RRethy/vim-illuminate'
         -- Awesome highlighting
         use {
             'nvim-treesitter/nvim-treesitter',

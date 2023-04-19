@@ -6,6 +6,8 @@ require('plugins_config.code_runner')
 require('nvim-autopairs').setup()
 -- Highlight selected ranges
 require('range-highlight').setup()
+-- Highlight word under cursor
+require('plugins_config.illuminate')
 -- Highlight TODO FIXME etc. comments
 require('todo-comments').setup()
 -- Bufferline nvim
