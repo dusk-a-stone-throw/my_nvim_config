@@ -51,10 +51,21 @@ require('tokyonight').setup({
 
 -- Github-nvim-theme (light)
 require('github-theme').setup({
-    theme_style = 'dark', -- dark/dimmed/dark_default/dark_colorblind/light/light_default/light_colorblind
-    function_style = 'NONE',
-    keyword_style = 'NONE',
-    sidebars = { 'qf', 'vista_kind', 'terminal', 'packer' },
+    options = {
+        styles = {
+            comments = 'NONE',
+            functions = 'NONE',
+            keywords = 'NONE',
+            variables = 'NONE',
+        },
+        darken = {
+            floats = true,
+            sidebars = {
+                enable = true,
+                list = { 'qf', 'vista_kind', 'terminal', 'packer' },
+            },
+        },
+    },
 })
 
 -- VScode theme
