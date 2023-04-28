@@ -8,7 +8,7 @@ Dark+ theme is preinstalled.
 "Word Office" mode.
 ![Super minimalistic Word-like mode](pics/word-like_mode.png)
 ## Requirements
-[:white_check_mark: nvim v0.8.3](https://github.com/neovim/neovim)
+[:white_check_mark: nvim v0.9](https://github.com/neovim/neovim)
 
 [:white_check_mark: git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
@@ -27,12 +27,12 @@ Dark+ theme is preinstalled.
 [:white_check_mark: lua](https://lua.org)
 ## Starting up
 ### Termux installation
-**WARNING:** IT'S A BETA FUNCTIONAL. USE IT AT YOUR OWN RISK.  
+**WARNING:** IT'S A BETA FEATURE. USE IT AT YOUR OWN RISK.  
 Run:
 ```shell
 bash -c "$(curl -s https://raw.githubusercontent.com/dusk-a-stone-throw/my_nvim_config/master/termux_install.sh)"
-````
-### Linux installation (can also use on Termux)
+```
+### Linux installation (may be used in Termux)
 If you haven't installed packer.nvim yet, run this:  
 ```shell
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -58,7 +58,8 @@ After that run `:PackerSync` to install necessary plugins and compile packer loa
 
 After that restart `nvim` and setup LSP servers, themes, formatters etc.
 ### Windows installation
-See [this page](https://github.com/dusk-a-stone-throw/my_nvim_config/wiki/Windows-installation).
+<!-- See [this page](https://github.com/dusk-a-stone-throw/my_nvim_config/wiki/Windows-installation). -->
+Coming soon!
 ## Main used plugins
 [packer.nvim](https://github.com/wbthomason/packer.nvim) — Awesome plugin manager  
 [mason.nvim](https://github.com/williamboman/mason.nvim) — Nvim package manager for LSP servers, linters, formatters etc.  
@@ -68,31 +69,32 @@ See [this page](https://github.com/dusk-a-stone-throw/my_nvim_config/wiki/Window
 [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) — Good highlighter  
 [bufferline.nvim](https://github.com/akinsho/bufferline.nvim) — Pretty bufferline  
 [fterm.nvim](https://github.com/iajiawang/fterm.nvim) — Useful floating terminal  
+[nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) — Modern folding  
 ## Configuration
 ### LSP
 
 Run `:Mason` to install LSP servers you need.  
 For **Python** `pyright` is used by default (install it),
 for **Lua** default is `lua_ls` (*lua-language-server*),
-for **Cpp** `clangd`.  
-To add a LSP server, you run `:Mason` and install all you need, then go to `LSP_config/nvim-cmp.lua` and add this to the end of file:  
+for **Cpp** `clangd` is default.  
+To add a LSP server, you run `:Mason` and install all you need, then go to end of `LSP_config/nvim-cmp.lua` and add installed language server to the list *language_servers*:  
 ```lua
-require('lspconfig')['YOUR_SERVER_NAME'].setup {
-  capabilities = capabilities,
-}
+local language_servers = { 'lua_ls', 'clangd', 'pyright', '<YOUR LANGUAGE SERVER>' }
 ```
 <details>
 <summary>EXAMPLE INSTALLATION</summary>
 
 #### Let's install a LSP server for Go.
 1. Run `:MasonInstall gopls` (or run `:Mason` and choose manually).
-2. Open `LSP_config/nvim-cmp.lua` and add  
+2. Open `LSP_config/nvim-cmp.lua` and append **gopls** to the *language_servers*:  
+from  
 ```lua
-require('lspconfig')['gopls'].setup({
-    capabilities = capabilities,
-})
+local language_servers = { 'lua_ls', 'clangd', 'pyright'}
 ```
-to the end of file.  
+to  
+```lua
+local language_servers = { 'lua_ls', 'clangd', 'pyright', 'gopls' }
+```
 *LSP autocompletion and linting are ready, but you better install a formatter and the Treesitter parser.*  
 3. Run `:MasonInstall gofumpt` to install the formatter (or any other you need). Don't forget to configure it, see [Formatting](#Formatting).  
 4. Install Treesitter parser: `:TSInstall go`.  
@@ -140,12 +142,13 @@ vim.cmd [[ colorscheme COLORSCHEME_YOU_NEED]]
 ### Keymappings
 Open `keymaps.lua` and add any keymapping you need by this syntax:
 ```lua
-map('MODE','KEYMAP','COMMAND',{OPTIONS})
+map({mode}, {lhs}, {rhs}, {opts})
 ```
 For example:
 ```lua
 map('n', '<C-Up>', ':MoveLine(-1)<CR>', { silent = true }) -- Move current line upwards
 ```
+See [Offical docs](https://neovim.io/doc/user/lua.html#vim.keymap.set()).
 ### User commands
 Open `commands.lua` and add any command you need.  
 Syntax: 
