@@ -123,18 +123,23 @@ cmp.setup.cmdline(':', {
 
 -- Setup lspconfig
 local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 
--- require('lspconfig')['<YOUR_LSP_SERVER>'].setup({
---     capabilities = capabilities,
--- })
+-- Need it to fix `warning: multiple different client offset_encodings detected for buffer, this is not supported yet` with clangd
+-- https://github.com/jose-elias-alvarez/null-ls.nvim/issues/428
+capabilities.offsetEncoding = { 'utf-16' }
 
-require('lspconfig')['lua_ls'].setup({
-    capabilities = capabilities,
-})
-require('lspconfig')['clangd'].setup({
-    capabilities = capabilities,
-})
-require('lspconfig')['pyright'].setup({
-    capabilities = capabilities,
-})
+-- For ufo.nvim folding
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+}
+
+-- Setting up LSP servers
+
+-- Just add your language server to the list below:
+local language_servers = { 'lua_ls', 'clangd', 'pyright' }
+for _, ls in ipairs(language_servers) do
+    require('lspconfig')[ls].setup({
+        capabilities = capabilities,
+    })
+end
