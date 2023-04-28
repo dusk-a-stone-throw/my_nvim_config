@@ -65,10 +65,12 @@ return require('packer').startup(function(use)
         use 'jose-elias-alvarez/null-ls.nvim'
         -- Automatically creates missing dirs when saving a file
         use 'jghauser/mkdir.nvim'
+        -- Better folding
+        use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
         -- Git integration
         use 'lewis6991/gitsigns.nvim'
         -- Start page
-        use 'glepnir/dashboard-nvim'
+        use 'nvimdev/dashboard-nvim'
         -- Toggle any symbol at the end of line
         use 'saifulapm/chartoggle.nvim'
         -- Better undo history

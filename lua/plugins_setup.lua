@@ -34,6 +34,8 @@ require('Comment').setup()
 require('LSP_config.mason-nvim')
 require('LSP_config.mason-lsp-config')
 require('LSP_config.nvim-cmp')
+-- Cool folding
+require('plugins_config.ufo')
 -- Diagnostic config
 require('LSP_config.diagnostic')
 -- Code formatter
