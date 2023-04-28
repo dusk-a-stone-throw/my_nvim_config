@@ -1,14 +1,8 @@
+local map = vim.keymap.set
+
 -- 'n' — Normal mode
 -- 'v' — Visual mode
 -- 'i' — Insert mode
-
-local function map(mode, lhs, rhs, opts)
-    local options = { noremap = true }
-    if opts then
-        options = vim.tbl_extend('force', options, opts)
-    end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
 
 -- Bufferline.nvim
 map('n', '<Tab>', ':BufferLineCycleNext<CR>', { silent = true })
@@ -31,6 +25,10 @@ map('n', '<Leader>cn', ':enew<CR>', { noremap = true, silent = true })
 map('n', '<Leader>fw', ':Telescope live_grep<CR>', { noremap = true, silent = true })
 -- Folding
 map('n', '<C-f>', 'za', { noremap = true, silent = true })
+map('n', 'zR', require('ufo').openAllFolds)
+map('n', 'zM', require('ufo').closeAllFolds)
+map('n', 'zr', require('ufo').openFoldsExceptKinds)
+map('n', 'zm', require('ufo').closeFoldsWith)
 -- Disable matching highlight
 map('n', '<Leader>nh', ':noh<CR>', { noremap = true, silent = true })
 -- Toggle terminal
