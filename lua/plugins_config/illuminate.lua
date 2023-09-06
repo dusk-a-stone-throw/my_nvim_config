@@ -3,6 +3,7 @@ require('illuminate').configure({
         'dashboard',
         'TelescopePrompt',
         'NvimTree',
+        'checkhealth',
     },
     min_count_to_highlight = 2,
 })

@@ -25,7 +25,7 @@ require('fundo').setup()
 -- Highlight arguments' definitions and usages
 require('hlargs').setup()
 -- Colored brackets
-require('plugins_config.ts-rainbow')
+require('plugins_config.rainbow-delimiters')
 -- Surround words, edit brackets etc.
 require('nvim-surround').setup()
 -- Fast comments
