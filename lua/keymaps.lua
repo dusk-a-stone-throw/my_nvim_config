@@ -44,7 +44,7 @@ map('v', 'r<C-k><C-k>', '<ESC><Cmd>lua require\'better-digraphs\'.digraphs("visu
 map(
     'n',
     '<F5>',
-    ':execute \':lua vim.lsp.buf.format({timeout_ms=5000})\' | w | RunCode<CR>',
+    ':execute \':lua vim.lsp.buf.format({timeout_ms=5000})\' | w | RunFile term<CR>',
     { noremap = true, silent = true }
 )
 -- For real Souls of Cinder
