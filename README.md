@@ -1,3 +1,6 @@
+# IMPORTANT
+I ain't got enough time to maintain my config properly. There are many legacy here I think. If I find time, I'll refactor it.  
+I'll commit some changes but really rarely, sorry for that.
 # Vargoshi neovim config
 Main menu.
 ![Preview](pics/preview.png)
