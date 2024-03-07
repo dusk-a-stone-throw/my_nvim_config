@@ -10,6 +10,8 @@ require('range-highlight').setup()
 require('plugins_config.illuminate')
 -- Highlight TODO FIXME etc. comments
 require('todo-comments').setup()
+-- Move lines
+require('move').setup()
 -- Bufferline nvim
 require('plugins_config.bufferline')
 -- Lualine.nvim

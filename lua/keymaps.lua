@@ -13,6 +13,10 @@ map('n', '<C-Up>', ':MoveLine(-1)<CR>', { silent = true })
 map('n', '<C-Down>', ':MoveLine(1)<CR>', { silent = true })
 map('v', '<C-Up>', ':MoveBlock(-1)<CR>', { silent = true })
 map('v', '<C-Down>', ':MoveBlock(1)<CR>', { silent = true })
+-- map('n', '<C-Up>', 'moveline.up', { silent = true })
+-- map('n', '<C-Down>', 'moveline.down', { silent = true })
+-- map('v', '<C-Up>', 'moveline.block_up', { silent = true })
+-- map('v', '<C-down>', 'moveline.block_down', { silent = true })
 -- LSP go to definition
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 -- LSP renaming

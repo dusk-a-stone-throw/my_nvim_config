@@ -92,6 +92,7 @@ return require('packer').startup(function(use)
     use('jiajiawang/fterm.nvim')
     -- Move lines
     use('fedepujol/move.nvim')
+    -- use('willothy/moveline', { run = 'make' })
     -- Brackets edit
     use({
         'kylechui/nvim-surround',
@@ -159,7 +160,7 @@ return require('packer').startup(function(use)
     -- Awesome bufferline
     use('akinsho/bufferline.nvim')
     -- Icons
-    use('nvim-tree/nvim-web-devicons')
+    use({ 'nvim-tree/nvim-web-devicons', tag = 'nerd-v2-compat' })
     -- Themes
     use('navarasu/onedark.nvim')
     use('folke/tokyonight.nvim')
@@ -170,7 +171,7 @@ return require('packer').startup(function(use)
     use('tanvirtin/monokai.nvim')
     use('shaunsingh/nord.nvim')
     use('Mofiqul/dracula.nvim')
-
+    use('kdheepak/monochrome.nvim')
     -- ======================== Other stuff ========================
     -- Cheat sheet
     use({

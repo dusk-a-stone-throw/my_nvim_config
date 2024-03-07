@@ -8,7 +8,7 @@ local kind_icons = {
     Function = '',
     Constructor = '',
     Field = 'ﰠ',
-    Variable = '',
+    Variable = '󰀫',
     Class = '',
     Interface = '',
     Module = '',
@@ -29,10 +29,8 @@ local kind_icons = {
     Operator = '',
     TypeParameter = '',
 }
-
 -- Snippets from rafamadriz/friendly-snippets
 -- require('luasnip.loaders.from_vscode').lazy_load()
-
 -- Snippets from honza/vim-snippets (I prefer them)
 require('luasnip.loaders.from_snipmate').lazy_load()
 
