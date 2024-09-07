@@ -51,6 +51,8 @@ map(
     ':execute \':lua vim.lsp.buf.format({timeout_ms=5000})\' | w | RunFile term<CR>',
     { noremap = true, silent = true }
 )
+-- Disable accident CTRL-Z closing
+map('n', '<c-z>', '<nop>', { noremap = true })
 -- For real Souls of Cinder
 -- map('n', '<Left>', ':echoe "Use h"<CR>', { noremap = true })
 -- map('n', '<Right>', ':echoe "Use l"<CR>', { noremap = true })
