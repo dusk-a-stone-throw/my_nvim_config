@@ -73,6 +73,6 @@ db.setup({
                 desc_hl = 'Statement',
             },
         },
-        footer = { 'By Vargoshi' },
+        footer = { 'Dusk is always a stone\'s throw' },
     },
 })
