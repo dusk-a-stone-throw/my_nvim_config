@@ -20,8 +20,8 @@ require('plugins_config.lualine')
 require('plugins_config.dashboard')
 -- Awesome highlight
 require('plugins_config.treesitter')
--- Add any symbol at the end of line
-require('plugins_config.chartoggle')
+-- HEX color highlighter and color picker
+require('ccc').setup()
 -- Better undo history
 require('fundo').setup()
 -- Highlight arguments' definitions and usages

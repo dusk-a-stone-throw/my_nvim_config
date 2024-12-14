@@ -1,4 +1,4 @@
--- Auto install packer.nvim if it's not istalled, then run PackerSync (See the end of file)
+-- Auto install packer.nvim if it's not istalled, then run PackerSync (look at the end of file)
 local ensure_packer = function()
     local fn = vim.fn
     local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
@@ -13,7 +13,7 @@ local packer_bootstrap = ensure_packer()
 
 -- On Android 12+, only 32 shadow processes are allowed, so I had to limit them.
 if string.match(os.getenv('HOME'), '.*com%.termux.*') then
-    require('packer').init({ max_jobs = 30 })
+    require('packer').init({ max_jobs = 25 })
 end
 
 return require('packer').startup(function(use)
@@ -68,8 +68,6 @@ return require('packer').startup(function(use)
     use('lewis6991/gitsigns.nvim')
     -- Start page
     use('nvimdev/dashboard-nvim')
-    -- Toggle any symbol at the end of line
-    use('saifulapm/chartoggle.nvim')
     -- Better undo history
     use({
         'kevinhwang91/nvim-fundo',
@@ -122,17 +120,7 @@ return require('packer').startup(function(use)
         requires = 'nvim-lua/plenary.nvim',
     })
     -- Show css colors, colorpicker
-    use({
-        'uga-rosa/ccc.nvim',
-        opt = true,
-        cmd = {
-            'CccConvert',
-            'CccPick',
-            'CccHighlighterEnable',
-            'CccHighlighterToggle',
-            'CccHighlighterDisable',
-        },
-    })
+    use('uga-rosa/ccc.nvim')
     -- Highlight entered ranges
     use('winston0410/range-highlight.nvim')
     -- Required
