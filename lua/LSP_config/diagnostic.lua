@@ -1,13 +1,4 @@
 -- Diagnostic signs
-local signs = {
-    { name = 'DiagnosticSignError', text = '>>' },
-    { name = 'DiagnosticSignWarn', text = '>>' },
-    { name = 'DiagnosticSignHint', text = '' },
-    { name = 'DiagnosticSignInfo', text = '' },
-}
-for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = '' })
-end
 vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
     border = 'rounded',
 })
@@ -31,13 +22,18 @@ local function lsp_highlight_document(client)
 end
 local config = {
     -- virtual_text = default.virtual_text,
-    signs = {
-        active = signs,
-    },
     virtual_text = true,
     update_in_insert = true,
     underline = false,
     severity_sort = true,
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = '>>',
+            [vim.diagnostic.severity.WARN] = '>>',
+            [vim.diagnostic.severity.INFO] = '',
+            [vim.diagnostic.severity.HINT] = '',
+        }
+    },
     float = {
         focusable = true,
         style = 'minimal',

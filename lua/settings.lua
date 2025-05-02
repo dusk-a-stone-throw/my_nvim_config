@@ -90,3 +90,5 @@ set.ruler = false
 set.lazyredraw = true
 -- Maximum number of items to show in the popup menu
 set.pumheight = 10
+-- Suppress deprecation message
+vim.deprecate = function() end

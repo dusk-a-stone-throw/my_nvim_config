@@ -59,7 +59,8 @@ return require('packer').startup(function(use)
     -- Code runner
     use({ 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' })
     -- Formatting
-    use('jose-elias-alvarez/null-ls.nvim')
+    use('nvimdev/guard.nvim')
+    use('nvimdev/guard-collection')
     -- Automatically creates missing dirs when saving a file
     use('jghauser/mkdir.nvim')
     -- Better folding
@@ -149,6 +150,8 @@ return require('packer').startup(function(use)
     use('akinsho/bufferline.nvim')
     -- Icons
     use({ 'nvim-tree/nvim-web-devicons', tag = 'nerd-v2-compat' })
+    -- Display both relative and absolute line numbers side-by-side
+    use('shrynx/line-numbers.nvim')
     -- Themes
     use('navarasu/onedark.nvim')
     use('folke/tokyonight.nvim')

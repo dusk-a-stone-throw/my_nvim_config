@@ -41,6 +41,8 @@ require('lsp_signature').setup({
     close_timeout = 1000,
     -- Select next signature if function is overloaded
     select_signature_key = '<C-s>',
+    doc_lines = 10,
+    max_height = 8,
 })
 
 -- Insert `(` after select function or method item
@@ -61,7 +63,11 @@ cmp.setup({
         end,
     },
     window = {
-        documentation = cmp.config.window.bordered(),
+        documentation = {
+            cmp.config.window.bordered(),
+            max_height = 15,
+            max_width = 10,
+        },
     },
     completion = {
         keyword_length = 1,
@@ -135,7 +141,7 @@ capabilities.textDocument.foldingRange = {
 -- Setting up LSP servers
 
 -- Just add your language server to the list below:
-local language_servers = { 'lua_ls', 'clangd', 'pyright' }
+local language_servers = { 'lua_ls', 'clangd', 'basedpyright' }
 for _, ls in ipairs(language_servers) do
     require('lspconfig')[ls].setup({
         capabilities = capabilities,

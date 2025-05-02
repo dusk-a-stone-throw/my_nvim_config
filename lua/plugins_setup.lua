@@ -41,7 +41,7 @@ require('plugins_config.ufo')
 -- Diagnostic config
 require('LSP_config.diagnostic')
 -- Code formatter
-require('plugins_config.null-ls')
+require('plugins_config.guard-nvim')
 -- Git integration
 require('plugins_config.gitsigns')
 -- Automatically creates missing directories on saving a file
@@ -52,3 +52,5 @@ require('plugins_config.nvim-tree')
 require('plugins_config.telescope')
 -- Show LSP symbols and tags
 require('plugins_config.symbols-outline')
+-- Display both relative and absolute line numbers side-by-side
+require('line-numbers').setup({})
