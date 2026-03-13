@@ -1,4 +1,9 @@
 local db = require('dashboard')
+-- To open NvimTree in fullscreen
+_G.open_tree_only = function()
+    vim.cmd('NvimTreeOpen')
+    vim.cmd('only')
+end
 db.setup({
     theme = 'doom',
     config = {
@@ -45,6 +50,13 @@ db.setup({
                 desc_hl = 'Statement',
             },
             {
+                icon = '󰉋  ',
+                desc = 'Open file tree                          ',
+                action = 'lua _G.open_tree_only()',
+                icon_hl = 'Statement',
+                desc_hl = 'Statement',
+            },
+            {
                 icon = '  ',
                 desc = 'Find  File                              ',
                 action = 'Telescope find_files find_command=rg,--hidden,--files',
@@ -73,6 +85,6 @@ db.setup({
                 desc_hl = 'Statement',
             },
         },
-        footer = { 'Dusk is always a stone\'s throw' },
+        footer = { 'Exodus 22:18 Thou shalt not suffer a witch to live ' },
     },
 })
