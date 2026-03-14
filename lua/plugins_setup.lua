@@ -36,6 +36,10 @@ require('Comment').setup()
 require('LSP_config.mason-nvim')
 require('LSP_config.mason-lsp-config')
 require('LSP_config.nvim-cmp')
+-- Debugging
+require('plugins_config.DAP')
+require('dapui').setup()
+require('mason-nvim-dap').setup()
 -- Cool folding
 require('plugins_config.ufo')
 -- Diagnostic config
