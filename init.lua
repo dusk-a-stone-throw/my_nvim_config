@@ -1,4 +1,4 @@
-require('plugins_install')
+require('plugins_config.lazy')
 require('impatient')
 require('settings')
 require('commands')
