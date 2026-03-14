@@ -11,8 +11,18 @@ require('lualine').setup({
         theme = 'auto',
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        disabled_filetypes = {},
         always_divide_middle = true,
+        disabled_filetypes = {
+            'NvimTree',
+            'dashboard',
+            -- Disable Dap windows
+            'dapui_watches',
+            'dapui_stacks',
+            'dapui_breakpoints',
+            'dapui_scopes',
+            'dapui_console',
+            'dap-repl',
+        },
     },
     sections = {
         lualine_b = { 'branch', 'diagnostics' },
@@ -31,3 +41,6 @@ require('lualine').setup({
     },
     extensions = {},
 })
+-- Best solution for Dap, remaining only filetype
+vim.cmd([[autocmd FileType dapui* set statusline=%y]])
+vim.cmd([[autocmd FileType dap-repl set statusline=%y]])
