@@ -21,6 +21,9 @@ map('v', '<C-Down>', ':MoveBlock(1)<CR>', { silent = true })
 map('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
 -- LSP renaming
 map('n', 'gr', '<cmd>lua vim.lsp.buf.rename()<CR>', { silent = true })
+-- DAP
+map('n', '<Leader>b', ':DapToggleBreakpoint<CR>', { silent = true, noremap = true })
+map('n', '<Leader><F5>', '<cmd>lua require("dapui").toggle()<CR>', { noremap = true })
 -- Dashboard.nvim
 map('n', '<Leader>ff', ':Telescope find_files find_command=rg,--hidden,--files<CR>', { noremap = true, silent = true })
 map('n', '<Leader>fh', ':Telescope oldfiles<CR>', { noremap = true, silent = true })
@@ -37,13 +40,14 @@ map('n', 'zm', require('ufo').closeFoldsWith)
 map('n', '<Leader>nh', ':noh<CR>', { noremap = true, silent = true })
 -- Toggle terminal
 map('n', '<Leader>tr', ':FTermToggle<CR>', { noremap = true, silent = true })
+map('t', '<A-i>', '<C-\\><C-n><CMD>:FTermToggle<CR>', { noremap = true, silent = true })
 -- Toggle nvim-tree
 map('n', '<Leader>fl', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 -- Paste digraphs
 map('i', '<C-k><C-k>', '<Cmd>lua require\'better-digraphs\'.digraphs("insert")<CR>', { noremap = true })
 map('n', 'r<C-k><C-k>', '<Cmd>lua require\'better-digraphs\'.digraphs("normal")<CR>', { noremap = true })
 map('v', 'r<C-k><C-k>', '<ESC><Cmd>lua require\'better-digraphs\'.digraphs("visual")<CR>', { noremap = true })
--- Run current opened file, you maybe need :wa
+-- Run current opened file, you maybe need :wa instead of w.
 -- WARN: sometimes vim.lsp.buf.format() falls due to timeout, so I had to increase timeout_ms (default is 1000)
 map(
     'n',
