@@ -85,6 +85,6 @@ db.setup({
                 desc_hl = 'Statement',
             },
         },
-        footer = { 'Exodus 22:18 Thou shalt not suffer a witch to live ' },
+        footer = { 'Exodus 22:18 Thou shalt not suffer a witch to live.' },
     },
 })

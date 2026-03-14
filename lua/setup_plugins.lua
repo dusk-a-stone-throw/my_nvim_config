@@ -1,25 +1,25 @@
 -- Floating term
-require('plugins_config.fterm')
+require('config.fterm')
 -- Code runner
-require('plugins_config.code_runner')
+require('config.code_runner')
 -- Nvim-autopairs
 require('nvim-autopairs').setup()
 -- Highlight selected ranges
 require('range-highlight').setup()
 -- Highlight word under cursor
-require('plugins_config.illuminate')
+require('config.illuminate')
 -- Highlight TODO FIXME etc. comments
 require('todo-comments').setup()
 -- Move lines
 require('move').setup()
 -- Bufferline nvim
-require('plugins_config.bufferline')
+require('config.bufferline')
 -- Lualine.nvim
-require('plugins_config.lualine')
+require('config.lualine')
 -- Start page
-require('plugins_config.dashboard')
+require('config.dashboard')
 -- Awesome highlight
-require('plugins_config.treesitter')
+require('config.treesitter')
 -- HEX color highlighter and color picker
 require('ccc').setup()
 -- Better undo history
@@ -27,7 +27,7 @@ require('fundo').setup()
 -- Highlight arguments' definitions and usages
 require('hlargs').setup()
 -- Colored brackets
-require('plugins_config.rainbow-delimiters')
+require('config.rainbow-delimiters')
 -- Surround words, edit brackets etc.
 require('nvim-surround').setup()
 -- Fast comments
@@ -37,24 +37,24 @@ require('LSP_config.mason-nvim')
 require('LSP_config.mason-lsp-config')
 require('LSP_config.nvim-cmp')
 -- Debugging
-require('plugins_config.DAP')
+require('config.DAP')
 require('dapui').setup()
 require('mason-nvim-dap').setup()
 -- Cool folding
-require('plugins_config.ufo')
+require('config.ufo')
 -- Diagnostic config
 require('LSP_config.diagnostic')
 -- Code formatter
-require('plugins_config.guard-nvim')
+require('config.guard-nvim')
 -- Git integration
-require('plugins_config.gitsigns')
+require('config.gitsigns')
 -- Automatically creates missing directories on saving a file
 require('mkdir')
 -- File explorer
-require('plugins_config.nvim-tree')
+require('config.nvim-tree')
 -- Fuzzy finder
-require('plugins_config.telescope')
+require('config.telescope')
 -- Show LSP symbols and tags
-require('plugins_config.symbols-outline')
+require('config.symbols-outline')
 -- Display both relative and absolute line numbers side-by-side
 require('line-numbers').setup({})
