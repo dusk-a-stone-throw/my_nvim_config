@@ -55,6 +55,8 @@ map(
     ':execute \':lua vim.lsp.buf.format({timeout_ms=5000})\' | w | RunFile term<CR>',
     { noremap = true, silent = true }
 )
+-- Kill currently running file
+map('t', '<C-c>', '<CMD>:RunClose<CR>', { noremap = true, silent = false })
 -- Disable accident CTRL-Z closing
 map('n', '<c-z>', '<nop>', { noremap = true })
 -- For real Souls of Cinder
