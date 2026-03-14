@@ -92,3 +92,12 @@ set.lazyredraw = true
 set.pumheight = 10
 -- Suppress deprecation message
 vim.deprecate = function() end
+-- Disable starting new line from comment symbol when the line above is a comment
+vim.api.nvim_create_autocmd('BufWinEnter', {
+    callback = function()
+        vim.opt.formatoptions = 'jql' -- Set your desired options
+        -- Or use:
+        -- vim.opt.formatoptions:remove("ro")
+        -- vim.opt.formatoptions:append("j")
+    end,
+})
