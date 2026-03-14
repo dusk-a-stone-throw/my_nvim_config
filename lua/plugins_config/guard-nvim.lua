@@ -13,17 +13,24 @@ vim.g.guard_config = {
 }
 ft('c'):fmt({
     cmd = 'clang-format',
-    args = { '--style={IndentWidth: 4}' },
+    args = { '-style=file' },
     stdin = true,
 })
 ft('cpp'):fmt({
     cmd = 'clang-format',
-    args = { '--style={IndentWidth: 4}' },
+    args = { '-style=file' },
     stdin = true,
 })
-ft('python'):fmt('yapf')
+ft('java'):fmt({
+    cmd = 'clang-format',
+    args = { '-style=Google' },
+    stdin = true,
+})
+
 ft('lua'):fmt({
     cmd = 'stylua',
     args = { '--respect-ignores', '--quote-style=ForceSingle', '--indent-type=Spaces' },
     fname = true,
 })
+ft('go'):fmt('gofumpt')
+ft('python'):fmt('yapf')
