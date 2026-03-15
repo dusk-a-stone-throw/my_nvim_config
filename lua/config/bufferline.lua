@@ -48,7 +48,7 @@ require('bufferline').setup({
             fg = { attribute = 'fg', highlight = 'Normal' },
             bg = { attribute = 'bg', highlight = 'Normal' },
             italic = false,
-            bold = false,
+            bold = true,
         },
         separator = {
             fg = { attribute = 'bg', highlight = 'Normal' },
