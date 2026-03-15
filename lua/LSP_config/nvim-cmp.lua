@@ -52,7 +52,15 @@ cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 cmp.setup({
     sources = cmp.config.sources({
         { name = 'git' },
-        { name = 'nvim_lsp' },
+        -- Disable suggest text when you are writing comments of strings
+        {
+            name = 'nvim_lsp',
+            entry_filter = function(entry, ctx)
+                local kind = require('cmp').lsp.CompletionItemKind
+                return entry:get_kind() ~= kind.Text
+            end,
+        },
+        -- Autocomplete for working with plugins' configs, nvim.api etc, for developing your own plugins
         { name = 'luasnip' },
         { name = 'path', group_index = 2 },
     }),
