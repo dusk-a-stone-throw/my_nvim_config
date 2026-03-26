@@ -32,7 +32,7 @@ if is_wsl then
     }
 end
 
-vim.opt.clipboard = 'unnamedplus' -- Автоиспользует + регистр
+vim.opt.clipboard = 'unnamedplus'
 
 for _, plugin in pairs(disabled_built_ins) do
     vim.g['loaded_' .. plugin] = 1
