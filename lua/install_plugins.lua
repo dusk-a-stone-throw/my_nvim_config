@@ -8,14 +8,6 @@ return {
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
     { 'neovim/nvim-lspconfig' },
-    -- Java LSP
-    {
-        'nvim-java/nvim-java',
-        config = function()
-            require('java').setup()
-            vim.lsp.enable('jdtls')
-        end,
-    },
     -- DAP
     { 'mfussenegger/nvim-dap' },
     { 'rcarriga/nvim-dap-ui', dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' } },
