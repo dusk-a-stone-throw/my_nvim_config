@@ -45,7 +45,6 @@ set.number = true
 -- Show spaces
 set.listchars:append({ space = '·', trail = '·' })
 set.list = true
-set.fileencoding = 'utf-8'
 set.encoding = 'utf-8'
 -- Syntax highlight
 set.syntax = 'on'
