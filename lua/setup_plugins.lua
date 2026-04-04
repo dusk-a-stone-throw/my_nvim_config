@@ -32,10 +32,16 @@ require('config.rainbow-delimiters')
 require('nvim-surround').setup()
 -- Fast comments
 require('Comment').setup()
--- Nvim lsp completion
+
+-- LSP/DAPS/linter/formatters package manager
 require('LSP_config.mason-nvim')
-require('LSP_config.mason-lsp-config')
+require('LSP_config.mason-tool-installer')
+require('mason-lspconfig').setup()
+-- Nvim lsp completion
 require('LSP_config.nvim-cmp')
+-- Auto enable and setup all installed LSP servers
+require('LSP_config.enable-lsp')
+
 -- Debugging
 require('config.DAP')
 require('dapui').setup()
@@ -54,7 +60,5 @@ require('mkdir')
 require('config.nvim-tree')
 -- Fuzzy finder
 require('config.telescope')
--- Show LSP symbols and tags
-require('config.symbols-outline')
 -- Display both relative and absolute line numbers side-by-side
 require('line-numbers').setup({})

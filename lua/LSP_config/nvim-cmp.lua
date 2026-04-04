@@ -146,15 +146,3 @@ capabilities.textDocument.foldingRange = {
     dynamicRegistration = false,
     lineFoldingOnly = true,
 }
-
--- Setting up LSP servers
-
--- Just add your language server to the list below:
-local language_servers = { 'lua_ls', 'clangd', 'basedpyright', 'gopls' }
-
-for _, server in ipairs(language_servers) do
-    vim.lsp.config(server, {
-        capabilities = capabilities,
-    })
-    vim.lsp.enable(server)
-end

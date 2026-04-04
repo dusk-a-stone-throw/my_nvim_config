@@ -1,0 +1,41 @@
+-- Setting up LSP servers
+
+local mason_registry = require('mason-registry')
+local mason_lspconfig = require('mason-lspconfig')
+
+-- Get list of all LSP servers (package names e.g. lua-language-server)
+local function get_installed_lsp_servers()
+    local lsp_servers = {}
+    for _, pkg in ipairs(mason_registry:get_installed_packages()) do
+        for _, category in ipairs(pkg.spec.categories or {}) do
+            if category == 'LSP' then
+                table.insert(lsp_servers, pkg.name)
+                break
+            end
+        end
+    end
+    return lsp_servers
+end
+
+-- Convert package to lspconfig format (e.g. lua-language-server -> lua_ls)
+local function package_to_lspconfig(package)
+    local mappings = mason_lspconfig.get_mappings()
+
+    return mappings.package_to_lspconfig[package]
+end
+
+-- Final list of all servers to be enabled
+local language_servers = {}
+
+-- Fill it
+for _, package in ipairs(get_installed_lsp_servers()) do
+    table.insert(language_servers, package_to_lspconfig(package))
+end
+
+-- Enable all
+for _, server in ipairs(language_servers) do
+    vim.lsp.config(server, {
+        capabilities = capabilities,
+    })
+    vim.lsp.enable(server)
+end
