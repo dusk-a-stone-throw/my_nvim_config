@@ -8,6 +8,7 @@ return {
     { 'williamboman/mason.nvim' },
     { 'williamboman/mason-lspconfig.nvim' },
     { 'neovim/nvim-lspconfig' },
+    { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
     -- DAP
     { 'mfussenegger/nvim-dap' },
     { 'rcarriga/nvim-dap-ui', dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' } },
