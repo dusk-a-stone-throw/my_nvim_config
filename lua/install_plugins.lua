@@ -50,9 +50,6 @@ return {
     { 'rafamadriz/friendly-snippets' },
     { 'honza/vim-snippets' },
 
-    -- Watch LSP tags and symbols
-    { 'simrat39/symbols-outline.nvim' },
-
     -- ======================== Utility ========================
     -- Code runner
     {

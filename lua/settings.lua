@@ -93,8 +93,6 @@ set.ruler = false
 set.lazyredraw = true
 -- Maximum number of items to show in the popup menu
 set.pumheight = 10
--- Suppress deprecation message
-vim.deprecate = function() end
 -- Disable starting new line from comment symbol when the line above is a comment
 vim.api.nvim_create_autocmd('BufWinEnter', {
     callback = function()
