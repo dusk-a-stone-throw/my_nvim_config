@@ -1,4 +1,5 @@
 local ft = require('guard.filetype')
+
 vim.g.guard_config = {
     -- format on write to buffer
     fmt_on_save = true,
@@ -11,19 +12,16 @@ vim.g.guard_config = {
     -- how frequently can linters be called
     lint_interval = 500,
 }
+
 ft('c'):fmt({
     cmd = 'clang-format',
     args = { '-style=file' },
     stdin = true,
 })
+
 ft('cpp'):fmt({
     cmd = 'clang-format',
     args = { '-style=file' },
-    stdin = true,
-})
-ft('java'):fmt({
-    cmd = 'clang-format',
-    args = { '-style=Google' },
     stdin = true,
 })
 
@@ -32,5 +30,15 @@ ft('lua'):fmt({
     args = { '--respect-ignores', '--quote-style=ForceSingle', '--indent-type=Spaces' },
     fname = true,
 })
-ft('go'):fmt('gofumpt')
+ft('lua'):lint('luacheck')
+
+ft('go'):fmt('gofumpt'):fmt('goimports')
+
 ft('python'):fmt('yapf')
+
+ft('ruby'):fmt({
+    cmd = 'rubyfmt',
+    args = { '--fail-fast' },
+    stdin = true,
+    fname = true,
+})
