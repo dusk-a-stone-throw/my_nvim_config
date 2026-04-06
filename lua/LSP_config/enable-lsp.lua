@@ -32,10 +32,21 @@ for _, package in ipairs(get_installed_lsp_servers()) do
     table.insert(language_servers, package_to_lspconfig(package))
 end
 
+local on_attach = function(client, bufnr)
+    vim.keymap.set('n', 'K', function()
+        vim.lsp.buf.hover({ border = 'rounded' })
+    end, { buffer = bufnr, silent = true, desc = 'LSP hover' })
+
+    vim.keymap.set('i', '<C-s>', function()
+        vim.lsp.buf.signature_help({ border = 'rounded' })
+    end, { buffer = bufnr, silent = true, desc = 'LSP signature' })
+end
+
 -- Enable all
 for _, server in ipairs(language_servers) do
     vim.lsp.config(server, {
         capabilities = capabilities,
+        on_attach = on_attach,
     })
     vim.lsp.enable(server)
 end
