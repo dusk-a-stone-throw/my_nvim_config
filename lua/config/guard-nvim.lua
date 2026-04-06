@@ -10,7 +10,7 @@ vim.g.guard_config = {
     -- automatic linting
     auto_lint = true,
     -- how frequently can linters be called
-    lint_interval = 500,
+    lint_interval = 100,
 }
 
 ft('c'):fmt({
@@ -30,7 +30,7 @@ ft('lua'):fmt({
     args = { '--respect-ignores', '--quote-style=ForceSingle', '--indent-type=Spaces' },
     fname = true,
 })
-ft('lua'):lint('luacheck')
+-- ft('lua'):lint('luacheck')
 
 ft('go'):fmt('gofumpt'):fmt('goimports')
 
