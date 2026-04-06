@@ -1,11 +1,11 @@
 -- Diagnostic signs
-vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = 'rounded',
-})
-
-vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = 'rounded',
-})
+-- vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+--     border = 'rounded',
+-- })
+--
+-- vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+--     border = 'rounded',
+-- })
 local function lsp_highlight_document(client)
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec(
@@ -32,7 +32,7 @@ local config = {
             [vim.diagnostic.severity.WARN] = '>>',
             [vim.diagnostic.severity.INFO] = '',
             [vim.diagnostic.severity.HINT] = '',
-        }
+        },
     },
     float = {
         focusable = true,
