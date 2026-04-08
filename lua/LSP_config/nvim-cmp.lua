@@ -60,7 +60,6 @@ cmp.setup({
                 return entry:get_kind() ~= kind.Text
             end,
         },
-        -- Autocomplete for working with plugins' configs, nvim.api etc, for developing your own plugins
         { name = 'luasnip' },
         { name = 'path', group_index = 2 },
     }),
